@@ -19,7 +19,7 @@ function Register() {
           <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
         </label>
         <p>Deberás poder confirmalo luego.</p>
-        <button className='btn-standard' type="submit">Continuar</button>
+        <button className='btn-standard disabled' type="submit">Continuar</button>
       </form>
     </div>
   );
