@@ -1,16 +1,18 @@
 import React from "react";
 import "./Init.css";
+import Logo from "../../Img/logo-large.svg";
 function Init() {
   return (
     <div className="init-container">
-      <div>
-        <p>Música a medida.</p>
+      <div className="init-logo-texto">
+        <img className="logo" src={Logo} alt="logo" />
+        <p className="init-texto">Música a medida.</p>
       </div>
-      <div>
-        <button className="btn-standardd">Registrarse Gratis</button>
-        <button>Continuar con Google</button>
-        <button>Continuar con Apple</button>
-        <button>Iniciar Sesión</button>
+      <div className="btn-container">
+        <button className="btn-standard width">Registrarse Gratis</button>
+        <button className="btn-transparent">Continuar con Google</button>
+        <button className="btn-transparent">Continuar con Apple</button>
+        <button className="btn-transparent">Iniciar Sesión</button>
       </div>
     </div>
   );
