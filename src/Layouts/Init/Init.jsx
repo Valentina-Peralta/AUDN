@@ -10,9 +10,9 @@ function Init() {
       </div>
       <div className="btn-container">
         <button className="btn-standard width">Registrarse Gratis</button>
-        <button className="btn-transparent">Continuar con Google</button>
-        <button className="btn-transparent">Continuar con Apple</button>
-        <button className="btn-transparent">Iniciar Sesión</button>
+        <button className="btn-transparent width">Continuar con Google</button>
+        <button className="btn-transparent width">Continuar con Apple</button>
+        <button className="btn-transparent width">Iniciar Sesión</button>
       </div>
     </div>
   );

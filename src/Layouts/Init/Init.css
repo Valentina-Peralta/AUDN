@@ -14,7 +14,7 @@
 }
 
 .width {
-    width: 60px;
+    width: 330px;
 }
 
 .init-texto {
@@ -28,12 +28,15 @@
 
 .btn-container  {
     height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     
 }
 
 .btn-transparent  {
     background-color: transparent;
-    border-radius: 0px 16px solid black;
+    border-radius: 0px 16px;
     display: flex;
     flex-direction: row;
     justify-content: center;
