@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 .btn-standard {
-  background-color: #FF8E0A;
+  background-color: #ff8e0a;
   border: none;
   border-radius: 0px 16px;
   display: flex;
@@ -21,4 +21,6 @@
   left: 16px;
   top: 16px;
 }
-
+.disabled {
+  background-color: #e4e6e8;
+}
