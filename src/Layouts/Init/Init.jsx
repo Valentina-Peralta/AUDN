@@ -2,7 +2,9 @@ import React from 'react'
 
 function Init() {
     return (
-        <div>Init</div>
+        <div>Init
+
+        </div>
     )
 }
 
