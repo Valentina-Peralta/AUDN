@@ -1,5 +1,6 @@
 import React from 'react'
-import CupidStyle from "../Cupid/CupidStyle.css"
+import "../Cupid/CupidStyle.css"
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -7,8 +8,10 @@ function Cupid() {
     return (
         <div className='cupidContainer'>
             <div className='cupidTitle'>
-            <img src="src\Img\position=left-1.svg" alt="backArrow" />    
-            <h3 className='musicalCupid'>Cupido Musical</h3>
+                <NavLink to='/home'>
+                    <img src="src\Img\position=left-1.svg" alt="backArrow" />
+                </NavLink>
+                <h3 className='musicalCupid'>Cupido Musical</h3>
             </div>
             <div className="cupidImg" >
                 <img src="" alt="" />
