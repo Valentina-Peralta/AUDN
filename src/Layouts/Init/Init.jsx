@@ -3,7 +3,7 @@ import "./Init.css";
 import Logo from "../../Img/logo-large.svg";
 import LgoGoogle from "../../Img/google-logo.svg";
 import LgoApple from "../../img/apple-logo.svg";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Init() {
   return (
     <div className="init-container">

@@ -1,0 +1,155 @@
+.profile-img {
+
+    position: absolute;
+    width: 152px;
+    height: 152px;
+    left: 119px;
+    top: 48px;
+    filter: drop-shadow(0px 0px 8px rgba(8, 8, 17, 0.08)) drop-shadow(4px 2px 12px rgba(8, 8, 17, 0.08));
+    border-radius: 92px;
+    background-color: royalblue;
+
+}
+
+.profile-config {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 288px;
+    top: 56px;
+}
+
+.profile-name {
+    text-align: center;
+    position: absolute;
+    width: 342px;
+    height: 36px;
+    left: 24px;
+    top: 216px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    color: #26262E;
+
+}
+
+.profile-alias {
+    position: absolute;
+    width: 342px;
+    height: 21px;
+    left: 24px;
+    top: 256px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #26262E;
+
+}
+
+.profile-divider-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 342px;
+    height: 26px;
+    left: 24px;
+    top: 304px;
+
+}
+
+.mis-playlists {
+    width: 101px;
+    height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #26262E;
+
+}
+
+.btn-standard-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100px;
+    height: 26px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #FDFEFF;
+    background: #FF8E0A;
+    border-radius: 0px 8px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    border: none;
+}
+
+.profile-playlists-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 320px;
+    height: 416px;
+    left: 35px;
+    top: 352px;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+
+}
+
+.profile-playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 152px;
+    height: 204px;
+
+}
+
+.profile-playlist-img {
+    width: 152px;
+    height: 152px;
+    background-color: #FF8E0A;
+    filter: drop-shadow(0px 0px 8px rgba(8, 8, 17, 0.08)) drop-shadow(4px 2px 12px rgba(8, 8, 17, 0.08));
+    border-radius: 0px 40px;
+
+}
+
+.profile-playlist-name {
+    width: 152px;
+    height: 18px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #26262E;
+
+}
+
+.profile-playlist-owner {
+    width: 152px;
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #838486;
+
+}
