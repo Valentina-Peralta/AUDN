@@ -12,13 +12,14 @@ function Cupid() {
             </div>
             <div className="cupidImg" >
                 <img src="" alt="" />
-                </div>
+            </div>
+            <div className='cupidImg2'>hola</div>
             <div className='matchBtns'>
                 <button className='heart'></button>
                 <button className='cross'></button>
             </div>
             <h2 className='artistName'>Cantante</h2>
-            <button className='disabled'> Crear lista</button>
+            <button className='disabled'> Crear Playlist</button>
         </div>
     )
 }
