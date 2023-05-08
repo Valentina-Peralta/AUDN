@@ -4,21 +4,31 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    justify-content: space-around;
+    justify-content: space-around; 
+    
+     background-image:linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.01)), url(../../Img/estudiar-con-musica-gif.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
+
 
 .init-logo-texto    {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 40px;
 }
 
 .width {
     width: 330px;
+    font-weight: 700;
 }
 
 .init-texto {
     font-size: 20px;
+    font-weight: 500;
 }
 
 .logo   {
@@ -30,8 +40,14 @@
     height: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
     gap: 18px;
+    margin-bottom: 20px;
     
+}
+
+.white-text {
+    color: white;
 }
 
 .btn-transparent  {
@@ -43,5 +59,11 @@
     align-items: center;
     padding: 12px 16px;
     gap: 12px;
+    
+  }
+
+  .i-Sesion {
+    border: none;
+    padding-top: 25px;
     
   }

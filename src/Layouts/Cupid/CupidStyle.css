@@ -1,0 +1,90 @@
+.cupidContainer {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
+}
+.musicalCupid {
+  padding: 1px;
+  padding-left: 5.5em;
+}
+.cupidTitle {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+  width: 90vw;
+}
+.cupidImg {
+  width: 15em;
+  height: 15em;
+  margin: 4em;
+  margin-left: 3.5em;
+  border-radius: 0px 1.5em;
+  z-index: 1;
+  background-color: rgba(0, 255, 255, 0.308);
+}
+.matchBtns {
+  display: flex;
+  align-items: center;
+  width: 15em;
+
+  position: relative;
+  z-index: 2;
+  margin-top: -5.5em;
+  margin-left: 3em;
+}
+
+.heart {
+  width: 3em;
+  height: 3em;
+  background-image: url(../../Img/heart.svg);
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position: center;
+  margin-left: 2em;
+  border-radius: 50%;
+  padding: 15px;
+  border: none;
+}
+.cross {
+  width: 3em;
+  height: 3em;
+  background-image: url(../../Img/cross.svg);
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position: center;
+  margin-left: 2em;
+  border-radius: 50%;
+  padding: 15px;
+  border: none;
+}
+.disabled {
+  color: rgb(59, 63, 66);
+  border: none;
+  border-radius: 0px 16px;
+  padding: 12px 16px;
+  width: 21em;
+  margin-top: 20em;
+  background-color: #e4e6e8;
+}
+.artistName {
+  margin-top: 2em;
+}
+.cupidImg2 {
+  width: 15em;
+  height: 15em;
+  position: absolute;
+  left: 53%;
+  right: 29.1%;
+  top: 5.94%;
+  bottom: 56.21%;
+  background-color: blue;
+  opacity: 0.1;
+  filter: drop-shadow(0px 0px 6px rgba(8, 8, 17, 0.08))
+    drop-shadow(6px 6px 12px rgba(8, 8, 17, 0.08));
+  border-radius: 0px 36px;
+  transform: rotate(10.45deg);
+}
