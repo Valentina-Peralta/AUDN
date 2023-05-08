@@ -1,20 +1,24 @@
 import React from 'react'
+import CupidStyle from "../Cupid/CupidStyle.css"
+
 
 
 function Cupid() {
     return (
-        <div>
-            <div>
+        <div className='cupidContainer'>
+            <div className='cupidTitle'>
             <img src="src\Img\position=left-1.svg" alt="backArrow" />    
-            <h3>Cupido Musical</h3>
+            <h3 className='musicalCupid'>Cupido Musical</h3>
             </div>
-            <img src="" alt="" />
-            <div>
-                <button><img src="src\Img\heart.svg" alt="Heart" /></button>
-                <button><img src="src\Img\cross.svg" alt="" /></button>
-                <h2></h2>
-                <button className='disabled'> Crear lista</button>
+            <div className="cupidImg" >
+                <img src="" alt="" />
+                </div>
+            <div className='matchBtns'>
+                <button className='heart'></button>
+                <button className='cross'></button>
             </div>
+            <h2 className='artistName'>Cantante</h2>
+            <button className='disabled'> Crear lista</button>
         </div>
     )
 }
