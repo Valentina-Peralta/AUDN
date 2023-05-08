@@ -9,6 +9,7 @@ import Cupid from './Layouts/Cupid/Cupid'
 import Contextual from './Layouts/Contextual/Contextual'
 import Playlist from './Layouts/Playlist/Playlist'
 import Profile from './Layouts/Profile/Profile'
+import Searcher from './Layouts/Searcher/Searcher'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,10 +18,11 @@ const router = createBrowserRouter(
       <Route path='/login' element={< Login />} />
       <Route path='/register' element={<Register />} />
       <Route path='/home' element={<Home />} />
+      <Route path='/playlist' element={<Playlist />} />
       <Route path='/cupido' element={<Cupid />} />
       <Route path='/contextual' element={<Contextual />} />
-      <Route path='/playlist' element={<Playlist />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/searcher' element={<Searcher />} />
 
     </Route>
   )

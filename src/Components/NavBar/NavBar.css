@@ -13,7 +13,7 @@
     border-radius: 0px;
 }
 
-.NavBar>div {
+.NavBar>a>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,15 +23,42 @@
 
     width: 64px;
     height: 46px;
+    font-weight: 500;
+    color: #26262e6a;
+
 }
 
 .NavBar>div>svg {
     cursor: pointer;
+}
+
+.NavBar>a>div>svg:hover {
+    fill: black;
+    stroke: black;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.NavBar>a>div:hover>p {
+    color: black;
+}
+
+.NavBar>.active>div>svg {
+    fill: black;
+    stroke: black;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #26262E;
 
 }
 
-.NavBar>div>svg:hover {
-    fill: black;
-    stroke: black;
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
+.active>div>p {
+    color: black;
 }
