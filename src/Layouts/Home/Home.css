@@ -84,6 +84,7 @@
     background: linear-gradient(180deg, rgba(253, 254, 255, 0) 25%, rgba(255, 142, 10, 0.534586) 75%, rgba(255, 142, 10, 0.9) 100%);
     opacity: 0.25;
     transform: rotate(-180deg);
+    z-index: -1;
 
 }
 

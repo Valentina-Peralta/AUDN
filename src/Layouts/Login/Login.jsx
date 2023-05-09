@@ -3,6 +3,7 @@ import "./Login.css";
 import flecha from "../../Img/position=left-1.svg";
 import open from "../../Img/state=open.svg";
 import close from "../../Img/state=closed.svg";
+import { NavLink } from "react-router-dom";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
@@ -33,9 +34,11 @@ function Login() {
       <div className="top-gradient"></div>
       <div className="margin-container">
         <header className="header">
-          <button className="btn-borderless">
-            <img src={flecha} alt="" />
-          </button>
+          <NavLink to="/">
+            <button className="btn-borderless">
+              <img src={flecha} alt="flecha atras" />
+            </button>
+          </NavLink>
           <h1 className="i-Sesion-text">Iniciar Sesión</h1>
         </header>
         <form action="submit" className="form">

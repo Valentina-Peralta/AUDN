@@ -1,0 +1,56 @@
+.config-container  {
+    height: 100vh;
+    
+}
+
+.config-flex    {
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.config-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+justify-content: space-between;
+height: 700px;
+
+
+}
+
+.config-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.config-Ver-CSesion {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.config-text    {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.btn-black  {
+    background-color: #000000;
+    border: none;
+    border-radius: 0px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.border-top {
+    border-top: 1px solid #E4E6E8;
+    padding-top: 20px;
+}
+
