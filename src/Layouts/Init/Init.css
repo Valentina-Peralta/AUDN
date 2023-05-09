@@ -50,6 +50,13 @@
     color: white;
 }
 
+.white-text:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(61, 83, 91);
+    transition: all 0.2s ease;
+}
+
+
 .btn-transparent  {
     background-color: transparent;
     border-radius: 0px 16px;
