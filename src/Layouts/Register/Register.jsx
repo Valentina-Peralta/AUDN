@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Register.css";
 import {useState} from 'react'
+import { NavLink } from 'react-router-dom';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -32,7 +33,9 @@ function Register() {
         </label>
         <p className='hint-placeholder'>Deberás poder confirmalo luego.</p>
       </form>
-      <button className='btn-standard disabled continuar-button' type="submit" style={{backgroundColor: emailValido ? '#FF8E0A' : ''}} disabled={!emailValido}><a className='continuar-text'>Continuar</a></button>
+      <NavLink to='/register2'>
+      <button className='continuar-button btn-standard disabled1' type="submit" style={{backgroundColor: emailValido ? '#FF8E0A' : ''}}>Continuar</button>
+      </NavLink>
     </div>
   );
 }
