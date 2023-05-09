@@ -10,6 +10,7 @@ import Contextual from './Layouts/Contextual/Contextual'
 import Playlist from './Layouts/Playlist/Playlist'
 import Profile from './Layouts/Profile/Profile'
 import Searcher from './Layouts/Searcher/Searcher'
+import Config from './Layouts/Profile/Config'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,8 @@ const router = createBrowserRouter(
       <Route path='/cupido' element={<Cupid />} />
       <Route path='/contextual' element={<Contextual />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/config' element={<Config />} />
+
       <Route path='/searcher' element={<Searcher />} />
 
     </Route>
