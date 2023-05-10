@@ -101,69 +101,67 @@ function Contextual() {
             </select>
           </form>
         </div>
-        <label className="contextualLabel" >
-          Selecciona hasta 3 géneros:
-        </label>
+        <h2 className="genderSelection">Selecciona hasta 3 géneros:</h2>
 
         <div className="styleContainer">
           <ul className="stylesList">
             <li
               onClick={() => setGenders([...genders, 'rock'])}
-              className="style">Rock</li>
+              className="lightStyle">Rock</li>
             <li
               onClick={() => setGenders([...genders, 'country'])}
 
-              className="style">Country</li>
+              className="lightStyle">Country</li>
             <li
               onClick={() => setGenders([...genders, 'soul'])}
 
-              className="style">Soul</li>
+              className="lightStyle">Soul</li>
             <li
               onClick={() => setGenders([...genders, 'jazz'])}
 
-              className="style">Jazz</li>
+              className="lightStyle">Jazz</li>
             <li
               onClick={() => setGenders([...genders, 'blues'])}
-              className="style">Blues</li>
+              className="lightStyle">Blues</li>
             <li
               onClick={() => setGenders([...genders, 'hip-hop'])}
-              className="style">Hip-Hop</li>
+              className="lightStyle">Hip-Hop</li>
             <li
               onClick={() => setGenders([...genders, 'pop'])}
-              className="style">Pop</li>
+              className="lightStyle">Pop</li>
             <li
               onClick={() => setGenders([...genders, 'reggae'])}
-              className="style">Reggae</li>
+              className="lightStyle">Reggae</li>
             <li
               onClick={() => setGenders([...genders, 'folk'])}
-              className="style">Folk</li>
+              className="lightStyle">Folk</li>
             <li
               onClick={() => setGenders([...genders, 'r&b'])}
-              className="style">R&B</li>
+              className="lightStyle">R&B</li>
             <li
               onClick={() => setGenders([...genders, 'classical'])}
-              className="style">Clásico</li>
+              className="lightStyle">Clásico</li>
             <li
               onClick={() => setGenders([...genders, 'ambient'])}
-              className="style">Ambiente</li>
+              className="lightStyle">Ambiente</li>
             <li
               onClick={() => setGenders([...genders, 'edm'])}
-              className="style">EDM</li>
+              className="lightStyle">EDM</li>
             <li
               onClick={() => setGenders([...genders, 'electronic'])}
-              className="style">Electrónica</li>
+              className="lightStyle">Electrónica</li>
             <li
               onClick={() => setGenders([...genders, 'disco'])}
-              className="style">Disco</li>
+              className="lightStyle">Disco</li>
             <li
               onClick={() => setGenders([...genders, 'new age'])}
-              className="style">New Age</li>
+              className="lightStyle">New Age</li>
             <li
               onClick={() => setGenders([...genders, 'punk'])}
-              className="style">Punk</li>
+              className="lightStyle">Punk</li>
             <li
               onClick={() => setGenders([...genders, 'heavy metal'])}
-              className="style">Heavy metal</li>
+              className="lightStyle">Heavy metal</li>
           </ul>
         </div>
         <button className="disabled"> Crear Playlist</button>

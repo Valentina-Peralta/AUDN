@@ -43,7 +43,7 @@ function Register() {
         //si el result={"message":...}--->continuar a register2
         //si el result={"error":...}---->dar un mensaje avisando al usuario
         if (result.error === "El usuario ya se encuentra registrado") {
-          alert("error")
+          alert("El usuario ya se encuentra registrado")
         } else {
           localStorage.setItem('email', email)
           navigate('/register2')
