@@ -3,31 +3,73 @@ import "./Login.css";
 import flecha from "../../Img/position=left-1.svg";
 import open from "../../Img/state=open.svg";
 import close from "../../Img/state=closed.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
   const [img, setImg] = useState(close);
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
   const [active, setActive] = useState("form");
+  const [email, setEmail] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [password, setPassword] = useState('');
 
-  const inputContainer = () => {
-    setInput1(event.target.value);
-    setInput2(document.getElementById("password").value);
-    if (input1.length > 4 && input2.length > 4) {
+  /*   const inputContainer = (event) => {
+      setInput1(event.target.value);
+      setInput2(document.getElementById("password").value);
+      if (input1.length > 4 && input2.length > 4) {
+        setActive("standard");
+      } else {
+        setActive("form");
+      }
+    }; */
+
+  /*   if (email.length > 4 && password.length > 4) {
       setActive("standard");
     } else {
       setActive("form");
-    }
-  };
+    } */
 
-  const toggleCloseOpen = () => {
+  console.log(email, password)
+  const toggleCloseOpen = (event) => {
     setShowPass(!showPass);
     setImg(showPass ? close : open);
     console.log(showPass);
     event.preventDefault();
   };
+  const navigate = useNavigate()
+
+  const login = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "email": email,
+      "password": password
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:3001/api/users/login", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        localStorage.setItem('token', result.token)
+        localStorage.setItem('user_id', result.user.id)
+        localStorage.setItem('user_name', result.user.name)
+        localStorage.setItem('user_email', result.user.email)
+        localStorage.setItem('user_user_name', result.user.user_name)
+        localStorage.setItem('user_image', result.user.image)
+
+        console.log(result)
+        navigate('/home')
+      })
+      .catch(error => console.log(error));
+  }
+
 
   return (
     <div className="login-container">
@@ -46,9 +88,10 @@ function Login() {
             Nombre de Usuario o E-mail:
           </label>
           <input
-            onChange={inputContainer}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="text"
-            name="username"
+            name="email"
             id="username"
             className="input"
           />
@@ -59,8 +102,8 @@ function Login() {
 
           <div className="div-input">
             <input
-              onChange={inputContainer}
-              type={showPass ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} type={showPass ? "text" : "password"}
               name="password"
               id="password"
               className="no-input"
@@ -70,11 +113,16 @@ function Login() {
             </button>
           </div>
 
-          <button type="submit" className={` btn-${active} white-text`}>
+          <button
+            type="button"
+            onClick={login}
+            className={` btn-${active} white-text`}>
             Iniciar Sesión
           </button>
         </form>
-        <button className="i-Sesion-text btn-borderless">
+        <button
+
+          className="i-Sesion-text btn-borderless">
           ¿Olvidaste tu contraseña?
         </button>
       </div>

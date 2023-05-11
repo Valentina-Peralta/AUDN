@@ -228,12 +228,7 @@
     height: 48px;
     left: 22px;
     top: 496px;
-    
-    /* Medios Tonos/Gris 1 */
-    
-    /* background: #E4E6E8;
-    border-radius: 0px 16px;
-    border-color: #E4E6E8; */
+    color: #FDFEFF;
     }
 
     .continuar-text {
@@ -267,3 +262,13 @@
         order: 1;
         flex-grow: 0;
     }
+
+    .disabled1 {
+        color: white;
+        border: none;
+        border-radius: 0px 16px;
+        padding: 12px 16px;
+        width: 21em;
+        margin-top: 5em;
+        background-color: #e4e6e8;
+      }

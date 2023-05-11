@@ -19,6 +19,7 @@ import Profile from "./Layouts/Profile/Profile";
 import Searcher from "./Layouts/Searcher/Searcher";
 import Config from "./Layouts/Profile/Config";
 import Error404 from "./Layouts/Error 404/Error404";
+import Register2 from "./Layouts/Register/Register2";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="/config" element={<Config />} />
       <Route path="/searcher" element={<Searcher />} />
       <Route path="/*" element={<Error404 />} />
+      <Route path="/register2" element={<Register2 />} />
     </Route>
   )
 );
