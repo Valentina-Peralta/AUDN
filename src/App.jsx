@@ -22,6 +22,7 @@ import Error404 from "./Layouts/Error 404/Error404";
 import Register2 from "./Layouts/Register/Register2";
 import Contract from "./Layouts/Contract/Contract";
 import UserPlaylist from "./Layouts/UserPlaylist/UserPlaylist";
+import NewPlaylist from "./Layouts/NewPlaylist/NewPlaylist";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
       <Route path="/register2" element={<Register2 />} />
       <Route path="/contract" element={<Contract />} />
       <Route path="/userplaylist" element={<UserPlaylist />} />
+      <Route path="/newplaylist" element={<NewPlaylist />} />
     </Route>
   )
 );

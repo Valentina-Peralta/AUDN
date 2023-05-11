@@ -1,0 +1,48 @@
+.newPlContainer {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
+}
+.newPlTitle {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+  margin-left: 1em;
+  width: 90%;
+}
+.newPl {
+  margin-left: 5em;
+}
+.plName {
+  font-size: 1.8em;
+}
+.plNameContainer {
+  text-align: center;
+  margin-top: 2em;
+}
+.newPlInput {
+  width: 95%;
+  margin-left: 1em;
+  margin-top: 2em;
+  font-size: 1.4em;
+}
+.npi {
+  width: 20em;
+  height: 3em;
+  border: 2px solid #bfc0c1;
+  border-radius: 0px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #bfc0c1;
+  padding-left: 3em;
+  margin-top: 2em;
+}
+.disabled {
+  margin-top: 28em;
+}
