@@ -1,4 +1,4 @@
-/* .userPlContainer {
+.userPlContainer {
   display: flex;
   flex-direction: column;
   color: black;
@@ -7,4 +7,4 @@
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
-} */
+}
