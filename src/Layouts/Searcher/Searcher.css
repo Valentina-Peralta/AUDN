@@ -91,20 +91,24 @@
     top: 0px;
 }
 
-.song-container {
+.top-song-container {
     height: 204px;
     width: 152px;
     text-align: center;
 }
 
-.song-image {
+.top-song-image {
     width: 152px;
     height: 152px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/4/4f/ACDCPowerUp.jpg');
     background-size: contain;
 }
 
-.song-title {
+.top-song-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.top-song-title {
 
     font-weight: 500;
     font-size: 12px;
@@ -115,7 +119,7 @@
     color: #26262E;
 }
 
-.song-artist {
+.top-song-artist {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;

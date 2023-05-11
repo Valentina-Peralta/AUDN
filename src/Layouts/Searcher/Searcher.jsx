@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
 import './Searcher.css'
 function Searcher() {
+
+    const user_id = localStorage.getItem('user_id')
+
+    const [top20, setTop20] = useState([])
+    useEffect(
+        () => {
+            const requestOptions = {
+                method: 'POST',
+                redirect: 'follow'
+            };
+
+            fetch(`http://localhost:3001/api/reproductions/top20/${user_id}`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    setTop20(result)
+                })
+                .catch(error => console.log('error', error));
+        }
+        , [])
     return (
         <div>
             <div className="top-gradient"></div>
@@ -22,107 +42,17 @@ function Searcher() {
                 </svg>
             </div>
             <div className="trending-grid-mundial">
+
                 <div className="trend-grid">
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
-                    <div className="song-container">
-                        <div className="song-image" />
-                        <p className='song-title'>Demon Fire</p>
-                        <p className='song-artist'>AC/DC</p>
-                    </div>
+                    {top20.map(song => (<div className="top-song-container">
+                        <div className="top-song-image" >
+                            <img src={song.album_image} alt="" />
+                        </div>
+                        <p className='top-song-title'>{song.name}</p>
+                        <p className='top-song-artist'>{song.album_name}</p>
+                    </div>))}
+
+
                 </div>
 
             </div>

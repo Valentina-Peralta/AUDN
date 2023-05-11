@@ -1,27 +1,47 @@
 import React, { useEffect, useState } from "react";
 import "../Contextual/ContextualStyle.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Contextual() {
 
+  const navigate = useNavigate()
+  const user_id = localStorage.getItem('user_id')
   const [songs, setSongs] = useState([])
-
+  const songs_id = songs.map(song => song.id)
   const [occasion, setOccasion] = useState('')
   const [mood, setMood] = useState('')
   const [weather, setWeather] = useState('')
   const [genders, setGenders] = useState([])
+  const songsGenders = [{ 'name': 'rock', 'selected': false },
+  { 'name': 'country', 'selected': false },
+  { 'name': 'soul', 'selected': false },
+  { 'name': 'jazz', 'selected': false },
+  { 'name': 'blues', 'selected': false },
+  { 'name': 'hip-hop', 'selected': false },
+  { 'name': 'pop', 'selected': false },
+  { 'name': 'reggae', 'selected': false },
+  { 'name': 'folk', 'selected': false },
+  { 'name': 'r&b', 'selected': false },
+  { 'name': 'classical', 'selected': false },
+  { 'name': 'ambient', 'selected': false },
+  { 'name': 'edm', 'selected': false },
+  { 'name': 'electronic', 'selected': false },
+  { 'name': 'disco', 'selected': false },
+  { 'name': 'new age', 'selected': false },
+  { 'name': 'punk', 'selected': false },
+  { 'name': 'heavy metal', 'selected': false }
 
+  ]
+
+  const [disabled, setDisabled] = useState(true); // Establecer la prop 'disabled' en 'true' por defecto
   const [contextualSongs, setContextualSongs] = useState([])
-
 
   useEffect(() => {
     const contextual = songs.filter(song => {
       return song.weather === weather && song.mood === mood && song.occasion === occasion && (song.gender === genders[0] || song.gender === genders[1] || song.gender === genders[2]);
     });
     setContextualSongs(contextual);
-    console.log(contextual)
-
-  }, [occasion, mood, weather]);
+  }, [occasion, mood, weather, genders]);
 
   useEffect(
     () => {
@@ -37,11 +57,37 @@ function Contextual() {
         })
         .catch(error => console.log('error', error));
     }
-
-
     , [])
 
+  const addPlaylist = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    var raw = JSON.stringify({
+      "name": "Música contextual",
+      "user_id": user_id,
+      "songs_id": songs_id
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:3001/api/playlists", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        const id = result.playlist[0].id
+        console.log(id)
+        navigate(`/userPlaylist/${id}`)
+      })
+      .catch(error => console.log('error', error));
+  }
+
+  console.log(mood, occasion, weather)
   return (
     <div>
       <div className="contextualContainer">
@@ -57,7 +103,14 @@ function Contextual() {
               ¿Cuál es la ocasión?
             </label>
             <select
-              onChange={(e) => setOccasion(e.target.value)}
+              onChange={(e) => {
+                setOccasion(e.target.value)
+                if (mood === '' && weather === '' && occasion === '') {
+                  setDisabled(true)
+                } else {
+                  setDisabled(false)
+                }
+              }}
               className="ctxSelect" name="ocasiones" id="ocasiones">
               <option value="" disabled selected>Actividad</option>
               <option value="training">Ejercicio Físico</option>
@@ -74,7 +127,14 @@ function Contextual() {
               ¿Cómo te sientes?
             </label>
             <select
-              onChange={(e) => setMood(e.target.value)}
+              onChange={(e) => {
+                setMood(e.target.value)
+                if (mood === '' && weather === '' && occasion === '') {
+                  setDisabled(true)
+                } else {
+                  setDisabled(false)
+                }
+              }}
 
               className="ctxSelect" name="field" id="field">
               <option value="" disabled selected>Estado de ánimo</option>
@@ -88,7 +148,15 @@ function Contextual() {
               ¿Cómo está el clima?
             </label>
             <select
-              onChange={(e) => setWeather(e.target.value)}
+              onChange={(e) => {
+                setWeather(e.target.value)
+                if (mood === '' && weather === '' && occasion === '') {
+                  setDisabled(true)
+                } else {
+                  setDisabled(false)
+                }
+              }
+              }
 
               className="ctxSelect" name="wheater" id="wheater">
               <option value="" disabled selected>Clima</option>
@@ -105,66 +173,26 @@ function Contextual() {
 
         <div className="styleContainer">
           <ul className="stylesList">
-            <li
-              onClick={() => setGenders([...genders, 'rock'])}
-              className="lightStyle">Rock</li>
-            <li
-              onClick={() => setGenders([...genders, 'country'])}
 
-              className="lightStyle">Country</li>
-            <li
-              onClick={() => setGenders([...genders, 'soul'])}
+            {songsGenders.map(songGender =>
+            (<li
+              key={songGender.name}
+              onClick={() => {
+                songGender.selected === false ? songGender.selected = true : songGender.selected = false
+                setGenders([...genders, songGender.name])
 
-              className="lightStyle">Soul</li>
-            <li
-              onClick={() => setGenders([...genders, 'jazz'])}
+              }}
+              className={songGender.selected ? 'darkStyle ' : "lightStyle"}>
+              {songGender.name}
+            </li>)
 
-              className="lightStyle">Jazz</li>
-            <li
-              onClick={() => setGenders([...genders, 'blues'])}
-              className="lightStyle">Blues</li>
-            <li
-              onClick={() => setGenders([...genders, 'hip-hop'])}
-              className="lightStyle">Hip-Hop</li>
-            <li
-              onClick={() => setGenders([...genders, 'pop'])}
-              className="lightStyle">Pop</li>
-            <li
-              onClick={() => setGenders([...genders, 'reggae'])}
-              className="lightStyle">Reggae</li>
-            <li
-              onClick={() => setGenders([...genders, 'folk'])}
-              className="lightStyle">Folk</li>
-            <li
-              onClick={() => setGenders([...genders, 'r&b'])}
-              className="lightStyle">R&B</li>
-            <li
-              onClick={() => setGenders([...genders, 'classical'])}
-              className="lightStyle">Clásico</li>
-            <li
-              onClick={() => setGenders([...genders, 'ambient'])}
-              className="lightStyle">Ambiente</li>
-            <li
-              onClick={() => setGenders([...genders, 'edm'])}
-              className="lightStyle">EDM</li>
-            <li
-              onClick={() => setGenders([...genders, 'electronic'])}
-              className="lightStyle">Electrónica</li>
-            <li
-              onClick={() => setGenders([...genders, 'disco'])}
-              className="lightStyle">Disco</li>
-            <li
-              onClick={() => setGenders([...genders, 'new age'])}
-              className="lightStyle">New Age</li>
-            <li
-              onClick={() => setGenders([...genders, 'punk'])}
-              className="lightStyle">Punk</li>
-            <li
-              onClick={() => setGenders([...genders, 'heavy metal'])}
-              className="lightStyle">Heavy metal</li>
+            )}
           </ul>
         </div>
-        <button className="disabled"> Crear Playlist</button>
+        <button
+          onClick={addPlaylist}
+          disabled={disabled}
+          className={disabled === true ? "disabled" : "disabled btn-standard"}> Crear Playlist</button>
       </div>
     </div>
   );
