@@ -20,8 +20,13 @@
 .cupidImg {
   width: 15em;
   height: 15em;
-  margin: 4em;
-  margin-left: 3.5em;
+  position: relative;
+  left: 1%;
+  
+  top: 5%;
+
+   margin: 4em;
+  margin-left: 3.5em; 
   border-radius: 0px 1.5em;
   z-index: 1;
   background-color: rgba(0, 255, 255, 0.308);
@@ -30,8 +35,8 @@
   display: flex;
   align-items: center;
   width: 15em;
-
-  position: relative;
+top:57%;
+  position: absolute;
   z-index: 2;
   margin-top: -5.5em;
   margin-left: 3em;
@@ -79,7 +84,7 @@
   position: absolute;
   left: 53%;
   right: 29.1%;
-  top: 5.94%;
+  top: 11%;
   bottom: 56.21%;
   background-color: blue;
   opacity: 0.1;
@@ -87,4 +92,281 @@
     drop-shadow(6px 6px 12px rgba(8, 8, 17, 0.08));
   border-radius: 0px 36px;
   transform: rotate(10.45deg);
+
+
+
+  
+  
+
+}
+
+
+.animacionImg2  {
+  animation: proxArtist 0.25s ease-out forwards;
+}
+
+
+@keyframes proxArtist {
+  0%  {background-color: blue; left: 53%; 
+     right: 29.1%;
+ 
+    transform: rotate(10.45deg);}
+
+    10% {
+      left: 50%;
+    }
+  20% {background-color: red;
+    left: 48%;  
+    right: 29.1%;
+   
+    bottom: 56.21%; 
+    transform: rotate(9deg);}
+   
+    30% {
+      left: 46%;
+    }
+
+  40% {background-color: yellow;
+    left: 42%;  
+    right: 29.1%;
+   
+    bottom: 56.21%; 
+    transform: rotate(7.5deg);}
+
+    50% {
+      left: 39%;
+    }
+
+  60% {background-color: salmon;
+    left: 35%;  
+    right: 29.1%;
+   
+    bottom: 56.21%; 
+    transform: rotate(5deg);}
+
+    70% {
+      left: 30%;
+    }
+
+  80% {background-color: aqua;
+    left: 26%;  
+    right: 29.1%;
+   
+    bottom: 56.21%; 
+    transform: rotate(2deg);}
+
+90% {
+  left: 23%;
+}
+
+  100% {background-color: blue;
+    left: 18%;  
+    right: 29.1%;
+    top: 20%;
+    bottom: 56.21%; 
+    transform: rotate(0deg);}
+}
+
+
+
+.animacionImg1Like  {
+  animation: currentArtistLike 0.3s ease-out forwards;
+}
+
+@keyframes currentArtistLike {
+  0%  { 
+    left: 1%;
+    top: 5%;
+ 
+    transform: rotate(0deg);}
+
+    10% {
+      left: -3%;
+      transform: rotate(-2deg);
+      top: 6%
+    }
+
+
+  20% {
+    left: -6%;  
+    
+   top: 7%;
+   
+    transform: rotate(-4deg);}
+   
+
+
+    30% {
+      left: -9%;
+      top: 9%;
+      transform: rotate(-8deg);
+    }
+
+
+
+  40% {
+    left: -12%;  
+    top:11%;
+   
+    opacity: 0.9;
+    transform: rotate(-12deg);}
+
+
+
+    50% {
+      left: -15%;
+      top:12%;
+      transform: rotate(-16deg);
+      opacity: 0.8;
+    }
+
+
+
+  60% {
+    left: -18%;  
+   
+   top:14%;
+   opacity: 0.7;
+    transform: rotate(-20deg);}
+    
+
+
+
+    70% {
+      left: -20%;
+      top: 15%;
+      transform: rotate(-24deg);
+      opacity: 0.6;
+    }
+
+
+
+  80% {
+    left: -26%; 
+    top: 16%; 
+ opacity: 0.4;
+   
+
+    transform: rotate(-28deg);}
+
+
+
+90% {
+  left: -32%;
+  top:18%;
+  transform: rotate(-29deg);
+  opacity: 0.2;
+}
+
+
+
+  100% {
+    left: -35%;  
+  
+    top: 20%;
+   opacity: 0;
+    transform: rotate(-30deg);}
+    
+}
+
+
+
+.animacionImg1Dislike  {
+  animation: currentArtistDislike 0.3s ease-out forwards;
+}
+
+@keyframes currentArtistDislike {
+  0%  { 
+    left: 1%;
+    top: 5%;
+ 
+    transform: rotate(0deg);}
+
+    10% {
+      left: 3%;
+      transform: rotate(2deg);
+      top: 6%
+    }
+
+
+  20% {
+    left: 6%;  
+    
+   top: 7%;
+   
+    transform: rotate(4deg);}
+   
+
+
+    30% {
+      left: 9%;
+      top: 9%;
+      transform: rotate(8deg);
+    }
+
+
+
+  40% {
+    left: 12%;  
+    top:11%;
+   
+    opacity: 0.9;
+    transform: rotate(12deg);}
+
+
+
+    50% {
+      left: 15%;
+      top:12%;
+      transform: rotate(16deg);
+      opacity: 0.8;
+    }
+
+
+
+  60% {
+    left: 18%;  
+   
+   top:14%;
+   opacity: 0.7;
+    transform: rotate(20deg);}
+    
+
+
+
+    70% {
+      left: 20%;
+      top: 15%;
+      transform: rotate(24deg);
+      opacity: 0.6;
+    }
+
+
+
+  80% {
+    left: 26%; 
+    top: 16%; 
+ opacity: 0.4;
+   
+
+    transform: rotate(28deg);}
+
+
+
+90% {
+  left: 32%;
+  top:18%;
+  transform: rotate(29deg);
+  opacity: 0.2;
+}
+
+
+
+  100% {
+    left: 35%;  
+  
+    top: 20%;
+   opacity: 0;
+    transform: rotate(30deg);}
+    
 }
