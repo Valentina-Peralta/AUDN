@@ -9,7 +9,7 @@ function Profile() {
   const profileImage = localStorage.getItem("user_image");
   const id = localStorage.getItem("user_id");
   const [playlists, setPlaylists] = useState([]);
-
+  console.log(playlists)
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -19,9 +19,11 @@ function Profile() {
     fetch(`http://localhost:3001/api/playlists/${id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
-        console.log(result[0].name);
-        setPlaylists(result);
+        if (!result.error) {
+          const filteredPlaylists = result.filter((playlist) => playlist.name !== "Música contextual");
+
+          setPlaylists(filteredPlaylists);
+        }
       })
       .catch((error) => console.log("error", error));
   }, []);
@@ -72,27 +74,25 @@ function Profile() {
         </svg>
         <button className="btn-standard-small">Crear Playlist</button>
       </div>
-      {playlists.map((playlist) => {
-        return (
-          <div key={playlist.id} className="profile-playlists-container">
-            <div className="profile-playlist">
-              <div className="profile-playlist-img"></div>
-              <p className="profile-playlist-name">{playlist.name}</p>
-              <p className="profile-playlist-owner">{user_name}</p>
+      <div className="profile-playlists-container">
+
+        {playlists.map((playlist) => {
+          return (
+            <div className="profile-playlist"
+              key={playlist.id}>
+              <NavLink to={`/userPlaylist/${playlist.id}`}> <div className="profile-playlist-img"></div>
+                <p className="profile-playlist-name">{playlist.name}</p>
+                <p className="profile-playlist-owner">{user_name}</p>
+              </NavLink>
             </div>
-          </div>
-        );
-      })}
+
+          );
+        })}
+      </div>
+
 
       <NavBar />
-      <div>
-        <div className="profile-playlist">
-          <div className="profile-playlist-img"></div>
-          <p className="profile-playlist-name">Nombre de la playlist</p>
-          <p className="profile-playlist-owner">Owner</p>
-        </div>
-      </div>
-      <NavBar />
+
     </div>
   );
 }

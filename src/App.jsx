@@ -41,8 +41,7 @@ const router = createBrowserRouter(
       <Route path="/*" element={<Error404 />} />
       <Route path="/register2" element={<Register2 />} />
       <Route path="/contract" element={<Contract />} />
-      <Route path="/userplaylist" element={<UserPlaylist />} />
-      <Route path="/newplaylist" element={<NewPlaylist />} />
+      <Route path="/userplaylist/:id" element={<UserPlaylist />} />
     </Route>
   )
 );

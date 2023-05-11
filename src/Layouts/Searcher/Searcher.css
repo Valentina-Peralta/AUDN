@@ -86,15 +86,15 @@
   top: 0px;
 }
 
-.song-container {
+.top-song-container {
   height: 204px;
   width: 152px;
   text-align: center;
 }
 
 .song-image {
-  width: 9.2em;
-  height: 9.5em;
+  width: 152px;
+  height: 152px;
   background-image: url("https://upload.wikimedia.org/wikipedia/en/4/4f/ACDCPowerUp.jpg");
   background-size: contain;
 }
