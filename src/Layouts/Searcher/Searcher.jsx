@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
 import './Searcher.css'
+import { NavLink } from 'react-router-dom'
 function Searcher() {
 
     const user_id = localStorage.getItem('user_id')
@@ -26,8 +27,9 @@ function Searcher() {
         <div>
             <div className="top-gradient"></div>
             <p className='searcher-title'>Buscador</p>
-
-            <input type="text" className='search-bar' placeholder='¿Qué deseas escuchar?' />
+            <NavLink to='/searcher2'>
+                <input type="text" className='search-bar' placeholder='¿Qué deseas escuchar?' />
+            </NavLink>
             <svg
                 className='search-vector'
                 width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,8 +53,6 @@ function Searcher() {
                         <p className='top-song-title'>{song.name}</p>
                         <p className='top-song-artist'>{song.album_name}</p>
                     </div>))}
-
-
                 </div>
 
             </div>
