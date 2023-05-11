@@ -1,15 +1,17 @@
 import React from "react";
 import "../UserPlaylist/UserPlaylist.css";
+import { NavLink } from "react-router-dom";
 
 function UserPlaylist() {
   return (
     <div className="userPlContainer">
-      <h5 className="generated">Generada del Cupido Musical</h5>
+      <h5 className="generated">Generada por ti 😊</h5>
       <div className="plTitle">
         <NavLink to="/home">
           <img src="src\Img\position=left-1.svg" alt="backArrow" />
         </NavLink>
-        <h1 className="pl">Playlist Generadas</h1>
+
+        <h1 className="pl">My Playlist </h1>
         <img src="src\Img\position=vertical.svg" alt="" />
       </div>
       <div className="plImg">
