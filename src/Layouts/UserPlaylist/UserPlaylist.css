@@ -14,12 +14,11 @@
   flex-wrap: wrap;
 }
 
-.plImg:nth-child(2)>img {
+.plImg:nth-child(2) > img {
   border-radius: 0px 32.9412px 0px 0px;
-
 }
 
-.plImg2>.artistImg {
+.plImg2 > .artistImg {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +42,7 @@
   width: 50%;
 }
 
-.artistImg>img {
+.artistImg > img {
   width: 100%;
   object-fit: cover;
 }
@@ -72,7 +71,6 @@
   height: 496px;
   left: 0px;
   top: 0px;
-
 }
 
 .song-container {
@@ -83,7 +81,6 @@
 
   width: 320px;
   height: 48px;
-
 }
 
 .song-img {
@@ -94,7 +91,7 @@
   flex-grow: 0;
 }
 
-.song-img>img {
+.song-img > img {
   width: 100%;
   height: 100%;
 }
@@ -111,26 +108,23 @@
 }
 
 .song-name {
-
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
 
-  color: #26262E;
-
+  color: #26262e;
 }
 
 .song-artist {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
 
   letter-spacing: 0.5px;
-
 
   color: #838486;
 }
@@ -152,15 +146,14 @@
   height: 40px;
   left: 24px;
   top: 24px;
-
 }
 
-.playlist-nav-bar>p {
+.playlist-nav-bar > p {
   width: 100%;
   text-align: center;
 }
 
-.header {
+.playlist-header {
   position: absolute;
   width: 320px;
   height: 24px;
@@ -170,7 +163,6 @@
   line-height: 24px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .playlist-info {
@@ -187,7 +179,7 @@
   background-color: aquamarine;
 }
 
-.playlist-info>img {
+.playlist-info > img {
   width: 48px;
   height: 48px;
   border-radius: 24px;
