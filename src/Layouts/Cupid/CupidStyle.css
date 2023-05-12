@@ -6,7 +6,7 @@
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .musicalCupid {
@@ -86,6 +86,10 @@
   margin-top: 2em;
 }
 
+body {
+  overflow: hidden;
+}
+
 .cupidImg2 {
   width: 15em;
   height: 15em;
@@ -99,14 +103,22 @@
   filter: drop-shadow(0px 0px 6px rgba(8, 8, 17, 0.08)) drop-shadow(6px 6px 12px rgba(8, 8, 17, 0.08));
   border-radius: 0px 36px;
   transform: rotate(10.45deg);
-
-
-
-
-
-
+  overflow: hidden;
 }
 
+.cupidImg2>img {
+  border-radius: 0px 36px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cupidImg>img {
+  border-radius: 0px 36px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .animacionImg2 {
   animation: proxArtist 0.25s ease-out forwards;

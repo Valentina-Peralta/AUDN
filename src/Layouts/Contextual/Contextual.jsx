@@ -33,6 +33,7 @@ function Contextual() {
 
   ]
 
+  console.log(songsGenders[0])
   const [disabled, setDisabled] = useState(true); // Establecer la prop 'disabled' en 'true' por defecto
   const [contextualSongs, setContextualSongs] = useState([])
 
@@ -88,6 +89,7 @@ function Contextual() {
   }
 
   console.log(mood, occasion, weather)
+
   return (
     <div>
       <div className="contextualContainer">
@@ -179,10 +181,10 @@ function Contextual() {
               key={songGender.name}
               onClick={() => {
                 songGender.selected === false ? songGender.selected = true : songGender.selected = false
-                setGenders([...genders, songGender.name])
+                setGenders([...genders, songGender.name]) //agrega el género al filtro
 
               }}
-              className={songGender.selected ? 'darkStyle ' : "lightStyle"}>
+              className={songGender.selected === true ? 'darkStyle ' : "lightStyle"}>
               {songGender.name}
             </li>)
 
