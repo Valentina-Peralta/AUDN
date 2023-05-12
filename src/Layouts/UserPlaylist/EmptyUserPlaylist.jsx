@@ -20,8 +20,9 @@ function EmptyUserPlaylist() {
                 </svg>
 
             </div>
-            <div className="header">
+            <div className="playlist-header">
                 <p>Creada por:</p>
+
             </div>
             <div className="playlist-info">
                 <img src={user_img} alt="" />
