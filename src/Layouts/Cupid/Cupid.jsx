@@ -10,36 +10,45 @@ function Cupid() {
   const [likeArtists, setLikeArtists] = useState([]) //array de artistas para generar la playlist
 
   //array de ids de artistas
+  const likeArtistsIds = likeArtists.map(artist => parseInt(artist.id));
+  console.log(likeArtistsIds)
+
 
   //traer todas las canciones de artista por id
 
   const [songs, setSongs] = useState([])
 
-  likeArtists.map(
-    artist =>
-      () => {
-        var requestOptions = {
-          method: 'GET',
-          redirect: 'follow'
-        };
 
-        fetch(`http://localhost:3001/api/artists/${artist.id}`, requestOptions)
-          .then(response => response.json())
-          .then(result => {
-            // setSongs(...songs,result)
-            console.log(result)
-          })
-          .catch(error => console.log('error', error));
-      }
+  const seeArtistSongs = (id) => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
 
-  )
+    fetch(`http://localhost:3001/api/artists/${id}`, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(songs)
+        setSongs(songs => songs.concat(result))
+        console.log(result)
 
+      })
+      .catch(error => console.log('error', error));
+  }
+  console.log(songs)
+
+  /*   likeArtistsIds.forEach(id => {
+      seeArtistSongs(id)
+    })
+   */
+  /*   seeArtistSongs(2)
+   */
   function Like(id) {
     setArtists(artists => artists.filter(x => x.id !== id));
+
     setLikeArtists(likeArtists => likeArtists.concat(artists.find(x => x.id === id)));
     console.log(likeArtists)
-    console.log(artists)
-
+    seeArtistSongs(id)
   }
   function Dislike(id) {
     setArtists(artists => artists.filter(x => x.id !== id))
@@ -80,21 +89,22 @@ function Cupid() {
    }
   */
   //Traer todos los artistas
-
-  useEffect(() => {
+  const getArtists = async () => {
     var requestOptions = {
       method: 'GET',
       redirect: 'follow'
     };
 
-    fetch("http://localhost:3001/api/artists", requestOptions)
+    await fetch("http://localhost:3001/api/artists", requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result)
-        setArtists(...artists, result)
-        console.log(artists)
+        setArtists(result)
       })
       .catch(error => console.log('error', error));
+  }
+
+  useEffect(() => {
+    getArtists()
   }, [])
 
 
