@@ -132,7 +132,8 @@
 
     position: absolute;
     width: 320px;
-    height: 2184px;
+    /*   height: 2184px;
+ */
     left: calc(50% - 320px/2);
     top: 0px;
 }
@@ -143,11 +144,58 @@
     text-align: center;
 }
 
-.song-image {
+.top-song-image {
     width: 152px;
     height: 152px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/4/4f/ACDCPowerUp.jpg");
     background-size: contain;
+}
+
+
+.top-song-image>img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.search-song-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+
+    width: 320px;
+    height: 48px;
+    display: flex;
+}
+
+.search-song-image {
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+}
+
+
+.search-song-image>img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.search-song-title {
+    width: 218px;
+    height: 18px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #26262E;
+}
+
+.search-song-artist {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #838486;
+
 }
 
 .song-title {

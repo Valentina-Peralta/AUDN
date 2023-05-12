@@ -72,7 +72,9 @@ function Profile() {
         >
           <line y1="1" x2="87" y2="1" stroke="#E4E6E8" strokeWidth="2" />
         </svg>
-        <button className="btn-standard-small">Crear Playlist</button>
+        <NavLink to='/newPlaylist'>
+          <button className="btn-standard-small">Crear Playlist</button>
+        </NavLink>
       </div>
       <div className="profile-playlists-container">
 
