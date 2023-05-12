@@ -1,274 +1,193 @@
 .top-gradient {
-        
-    /* top-gradient */
-
-
-    position: absolute;
-    height: 160px;
-    left: 0;
-    right: 0;
-    top: 0;
-    
-    /* Degradado a Blanco/Con color */
-    
-    background: linear-gradient(180deg, rgba(253, 254, 255, 0) 25%, rgba(255, 142, 10, 0.534586) 75%, rgba(255, 142, 10, 0.9) 100%);
-    opacity: 0.25;
-    transform: rotate(-180deg);
+  /* top-gradient */
+  position: absolute;
+  height: 10em;
+  left: 0;
+  right: 0;
+  top: 0;
+  /* Degradado a Blanco/Con color */
+  background: linear-gradient(
+    180deg,
+    rgba(253, 254, 255, 0) 25%,
+    rgba(255, 142, 10, 0.534586) 75%,
+    rgba(255, 142, 10, 0.9) 100%
+  );
+  opacity: 0.25;
+  transform: rotate(-180deg);
 }
 
 .top-nav-bar {
-    
-    /* top-nav-bar */
-
-
-    position: absolute;
-    width: 320px;
-    height: 40px;
-    left: 24px;
-    top: 24px;
+  /* top-nav-bar */
+  position: absolute;
+  width: 20em;
+  height: 2.5em;
+  left: 1.5em;
+  top: 1.5em;
 }
 
 .left-icon-placeholder {
+  /* left-icon-placeholder */
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  left: 0px;
+  top: 8px;
+  border: none;
+  background: none;
+}
 
-    
-    /* left-icon-placeholder */
-    
-    
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 8px;
-    border: none;
-    background: none;
-    
-    }
-    
-    .title-placeholder {
-        
-        /* text-container */
+.title-placeholder {
+  /* text-container */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 17em;
+  height: 40px;
+  left: 24px;
+  top: 0px;
+}
 
+.cuál-es-tu-correo-electrónico {
+  /* ¿Cuál es tu correo electrónico? */
+  position: absolute;
+  width: 320px;
+  height: 72px;
+  left: 24px;
+  top: 96px;
+  /* Headings/Heading 3 - 26px/Medium */
+  font-size: 26px;
+  line-height: 36px;
+  /* or 138% */
+  text-align: center;
+  /* Medios Tonos/Gris 5 */
+  color: #26262e;
+}
 
-        /* Auto layout */
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        
-        position: absolute;
-        width: 272px;
-        height: 40px;
-        left: 24px;
-        top: 0px;
-    }
-    
-    .cuál-es-tu-correo-electrónico {
-    
-        /* ¿Cuál es tu correo electrónico? */
-    
-    
-    position: absolute;
-    width: 320px;
-    height: 72px;
-    left: 24px;
-    top: 96px;
-    
-    /* Headings/Heading 3 - 26px/Medium */
-    
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 36px;
-    /* or 138% */
-    
-    text-align: center;
-    letter-spacing: 0.5px;
-    
-    /* Medios Tonos/Gris 5 */
-    
-    color: #26262E;
-    }
-    
-    .form-mail {
-        /* input */
+.form-mail {
+  /* input */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  position: absolute;
+  width: 320px;
+  height: 118px;
+  left: 24px;
+  top: 188px;
+}
 
+.label-placeholder {
+  /* label-placeholder */
+  width: 320px;
+  height: 28px;
+  /* Headings/Heading 4 - 20px/Medium */
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+  /* Medios Tonos/Gris 5 */
+  color: #26262e;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
 
-        /* Auto layout */
-        
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 12px;
-        
-        position: absolute;
-        width: 320px;
-        height: 118px;
-        left: 24px;
-        top: 188px;
-    }
+.input-mail {
+  /* input */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 16px;
+  width: 320px;
+  height: 48px;
 
-    .label-placeholder {
-        
-        /* label-placeholder */
+  /* Medios Tonos/Gris 1 */
+  border: 2px solid #e4e6e8;
+  border-radius: 0px 16px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
 
+.input-mail:focus {
+  border: 2px solid #ff8e0a;
+  outline: #ff8e0a;
+}
 
-        width: 320px;
-        height: 28px;
-        
-        /* Headings/Heading 4 - 20px/Medium */
-        
-        font-family: 'Rubik';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        /* identical to box height, or 140% */
-        
-        letter-spacing: 0.5px;
-        
-        /* Medios Tonos/Gris 5 */
-        
-        color: #26262E;
-        
-        
-        /* Inside auto layout */
-        
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
-    }
+.hint-placeholder {
+  /* hint-placeholder */
+  width: 320px;
+  height: 18px;
+  /* Body/Body Very Small - 12px/Medium */
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
 
-    .input-mail {
-        
-        /* input */
+  letter-spacing: 0.5px;
+  /* Medios Tonos/Gris 3 */
+  color: #838486;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
 
+.continuar-button {
+  /* btn-standard */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  position: absolute;
+  width: 320px;
+  height: 48px;
+  left: 22px;
+  top: 496px;
+  color: #fdfeff;
+}
 
-        box-sizing: border-box;
-        
-        /* Auto layout */
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 0px 16px;
-        
-        width: 320px;
-        height: 48px;
-        
-        /* Medios Tonos/Gris 1 */
-        
-        border: 2px solid #E4E6E8;
-        border-radius: 0px 16px;
-        
-        /* Inside auto layout */
-        
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0;
-    }
+.continuar-text {
+  /* label-placeholder */
 
-    .input-mail:focus {
-        border: 2px solid #FF8E0A;
-        outline: #FF8E0A;
-    }
-    
-    .hint-placeholder {
-        /* hint-placeholder */
+  width: 82px;
+  height: 24px;
+  /* Headings/Heading 5 - 16px/Medium */
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  text-align: center;
+  letter-spacing: 0.5px;
+  /* Blanco */
+  color: #fdfeff;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
 
-
-        width: 320px;
-        height: 18px;
-        
-        /* Body/Body Very Small - 12px/Medium */
-        
-        font-family: 'Rubik';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 18px;
-        /* identical to box height, or 150% */
-        
-        letter-spacing: 0.5px;
-        
-        /* Medios Tonos/Gris 3 */
-        
-        color: #838486;
-        
-        
-        /* Inside auto layout */
-        
-        flex: none;
-        order: 2;
-        align-self: stretch;
-        flex-grow: 0;
-    }
-    
-    .continuar-button {
-        /* btn-standard */
-    
-    
-    /* Auto layout */
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 16px;
-    gap: 12px;
-    
-    position: absolute;
-    width: 320px;
-    height: 48px;
-    left: 22px;
-    top: 496px;
-    color: #FDFEFF;
-    }
-
-    .continuar-text {
-        
-        /* label-placeholder */
-
-
-        width: 82px;
-        height: 24px;
-        
-        /* Headings/Heading 5 - 16px/Medium */
-        
-        font-family: 'Rubik';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        /* identical to box height, or 150% */
-        
-        text-align: center;
-        letter-spacing: 0.5px;
-        
-        /* Blanco */
-        
-        color: #FDFEFF;
-        
-        
-        /* Inside auto layout */
-        
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-    }
-
-    .disabled1 {
-        color: white;
-        border: none;
-        border-radius: 0px 16px;
-        padding: 12px 16px;
-        width: 21em;
-        margin-top: 5em;
-        background-color: #e4e6e8;
-      }
+.disabled1 {
+  color: white;
+  border: none;
+  border-radius: 0px 16px;
+  padding: 12px 16px;
+  width: 21em;
+  margin-top: 5em;
+  background-color: #e4e6e8;
+}

@@ -68,7 +68,7 @@ function Searcher2() {
 
                     {songs.map(song => {
                         return (<div
-                            key={song.song_name}
+
                             className="search-song-container">
                             <div className="search-song-image" >
                                 <img src={song.album_image} alt="" />
