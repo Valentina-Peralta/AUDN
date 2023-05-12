@@ -8,3 +8,137 @@
   height: 100vh;
   background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
 }
+
+.plImg {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plImg:nth-child(2)>img {
+  border-radius: 0px 32.9412px 0px 0px;
+
+}
+
+.plImg2>.artistImg {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plTitle {
+  justify-content: space-between;
+}
+
+.pl {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.plOptions {
+  align-items: center;
+}
+
+.artistImg {
+  width: 50%;
+}
+
+.artistImg>img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.playlist {
+  position: absolute;
+  width: 342px;
+  height: 220px;
+  left: 24px;
+  top: 512px;
+}
+
+.copy {
+  font-size: 16px;
+}
+
+.card-container-results {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  position: absolute;
+  width: 320px;
+  height: 496px;
+  left: 0px;
+  top: 0px;
+
+}
+
+.song-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 320px;
+  height: 48px;
+
+}
+
+.song-img {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.song-img>img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 218px;
+  height: 39px;
+}
+
+.song-name {
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #26262E;
+
+}
+
+.song-artist {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+
+  letter-spacing: 0.5px;
+
+
+  color: #838486;
+}
+
+.song-options {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  right: 0;
+  top: 8px;
+}

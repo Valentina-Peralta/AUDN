@@ -15,6 +15,22 @@
 
 }
 
+.search-bar-2 {
+    position: relative;
+    width: 320px;
+    height: 48px;
+    left: 24px;
+    top: 40px;
+    border: 2px solid #BFC0C1;
+    border-radius: 0px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #BFC0C1;
+    padding-left: 52px;
+
+}
 
 .searcher-title {
     position: absolute;
@@ -22,14 +38,13 @@
     height: 36px;
     left: 24px;
     top: 48px;
-    font-family: 'Rubik';
+    font-family: "Rubik";
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 36px;
     letter-spacing: 0.5px;
-    color: #26262E;
-
+    color: #26262e;
 }
 
 .search-vector {
@@ -40,17 +55,24 @@
     left: 38px;
 }
 
+.back-arrow {
+    position: absolute;
+    width: 19.74px;
+    height: 19.74px;
+    top: 55px;
+    left: 38px;
+}
+
 .top-20s {
     width: 64px;
     height: 24px;
-    font-family: 'Rubik';
+    font-family: "Rubik";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.5px;
-    color: #26262E;
-
+    color: #26262e;
 }
 
 .divider-container {
@@ -68,12 +90,36 @@
     top: 170px;
 }
 
+.divider-container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    position: absolute;
+    width: 320px;
+    height: 24px;
+    left: 24px;
+    top: 112px;
+}
+
 .trending-grid-mundial {
     position: absolute;
     width: 368px;
     height: 480px;
     left: 0px;
     top: 216px;
+    overflow-y: scroll;
+}
+
+.searches-container {
+    position: absolute;
+    width: 368px;
+    height: 600px;
+    left: 0px;
+    top: 160px;
     overflow-y: scroll;
 }
 
@@ -91,7 +137,7 @@
     top: 0px;
 }
 
-.song-container {
+.top-song-container {
     height: 204px;
     width: 152px;
     text-align: center;
@@ -100,22 +146,21 @@
 .song-image {
     width: 152px;
     height: 152px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/4/4f/ACDCPowerUp.jpg');
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/4/4f/ACDCPowerUp.jpg");
     background-size: contain;
 }
 
 .song-title {
-
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     margin-top: 16px;
     text-align: center;
     letter-spacing: 0.5px;
-    color: #26262E;
+    color: #26262e;
 }
 
-.song-artist {
+.top-song-artist {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;

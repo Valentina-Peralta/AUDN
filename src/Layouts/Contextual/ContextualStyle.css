@@ -8,25 +8,30 @@
   height: 100vh;
   background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
 }
+
 .contextualTitle {
   display: flex;
   flex-direction: row;
   margin-top: 2em;
   width: 90vw;
 }
+
 .contextualMusic {
   padding: 1px;
   padding-left: 5em;
 }
+
 .options {
   display: flex;
   flex-direction: column;
 }
+
 .contextualLabel {
   font-size: 1.5em;
   padding: 1em;
   font-weight: 500;
 }
+
 .ctxSelect {
   font-size: 1em;
   color: rgb(59, 63, 66);
@@ -42,9 +47,13 @@
   border-radius: 0px 16px;
   padding: 12px 16px;
   width: 21em;
-  margin-top: 5em;
   background-color: #e4e6e8;
 }
+
+.btn-standard {
+  background: #FF8E0A;
+}
+
 .styleContainer {
   display: flex;
   justify-content: center;
@@ -52,22 +61,26 @@
   margin-top: 2em;
   margin-left: 1em;
 }
+
 .stylesList {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   align-items: center;
 }
+
 .lightStyle {
   border: 1px solid black;
   border-radius: 0px 16px;
   padding: 8px;
   margin: 4px;
 }
+
 .darkStyle {
   color: rgba(253, 254, 255, 1);
   background-color: #26262e;
 }
+
 .genderSelection {
   font-size: 24px;
   margin-top: 1.2em;
