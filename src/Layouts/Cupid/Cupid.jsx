@@ -10,6 +10,7 @@ function Cupid() {
     setAnimationValue(!animationValue);
     if (animationValue === true) {
       setStartAnimation1("animacionImg2");
+    } else {
     }
   }
 

@@ -6,6 +6,7 @@
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(rgb(226, 194, 134), 1%, white);
+  overflow-x: hidden;
 }
 .musicalCupid {
   padding: 1px;
@@ -92,6 +93,7 @@ top:57%;
     drop-shadow(6px 6px 12px rgba(8, 8, 17, 0.08));
   border-radius: 0px 36px;
   transform: rotate(10.45deg);
+  overflow-x: hidden;
 
 
 

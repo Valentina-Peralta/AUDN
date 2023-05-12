@@ -33,7 +33,7 @@
 .card-1-image {
     width: 87px;
     height: 80px;
-    background-image: url('../../Img/cupid-animation-step1.png');
+    background-color: #26262Eed;
     border-radius: 0 0 0 24px;
 
 }
@@ -41,10 +41,44 @@
 .card-2-image {
     width: 87px;
     height: 80px;
-    background-image: url('../../Img/contextual-animation-step1.png');
+    background-color: #26262Eed;
     border-radius: 0 0 0 24px;
 
 }
+
+.headphone  {
+    position:absolute;
+    z-index: 2;
+}
+
+.cherub {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 7%;
+    animation: cherub 8s ease-in-out infinite;
+}
+
+
+@keyframes cherub {
+    0% {
+        top: 5%;
+        left: 7%;
+    }
+
+    30% {
+        top: 2%;
+        left: 3%;
+        transform: rotate(15deg);
+    }
+ 
+    60% {
+        transform: rotate(20deg)
+    }
+
+ 
+}
+
 
 .card-text {
     display: flex;
