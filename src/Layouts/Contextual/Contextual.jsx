@@ -3,34 +3,7 @@ import "../Contextual/ContextualStyle.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function Contextual() {
-  const navigate = useNavigate();
-  const user_id = localStorage.getItem("user_id");
-  const [songs, setSongs] = useState([]);
-  const songs_id = songs.map((song) => song.id);
-  const [occasion, setOccasion] = useState("");
-  const [mood, setMood] = useState("");
-  const [weather, setWeather] = useState("");
-  const [genders, setGenders] = useState([]);
-  const [songsGenders, setSongsGenders] = useState([
-    { name: "rock", selected: false },
-    { name: "country", selected: false },
-    { name: "soul", selected: false },
-    { name: "jazz", selected: false },
-    { name: "blues", selected: false },
-    { name: "hip-hop", selected: false },
-    { name: "pop", selected: false },
-    { name: "reggae", selected: false },
-    { name: "folk", selected: false },
-    { name: "r&b", selected: false },
-    { name: "classical", selected: false },
-    { name: "ambient", selected: false },
-    { name: "edm", selected: false },
-    { name: "electronic", selected: false },
-    { name: "disco", selected: false },
-    { name: "new age", selected: false },
-    { name: "punk", selected: false },
-    { name: "heavy metal", selected: false },
-  ]);
+
 
   const navigate = useNavigate()
   const user_id = localStorage.getItem('user_id')
