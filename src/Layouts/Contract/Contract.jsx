@@ -84,6 +84,7 @@ const Contract = () => {
         accediendo) a la página web o al servicio.
       </p>
       <p className='contractEnd'>¡Gracias por tu preferencia!😊</p>
+      <button className='readed'>Entendido</button>
     </div>
   )
 }
