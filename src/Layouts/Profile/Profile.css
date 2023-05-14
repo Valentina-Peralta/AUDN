@@ -136,10 +136,14 @@
 .profile-playlist-img {
     width: 152px;
     height: 152px;
-    background-color: #FF8E0A;
     filter: drop-shadow(0px 0px 8px rgba(8, 8, 17, 0.08)) drop-shadow(4px 2px 12px rgba(8, 8, 17, 0.08));
     border-radius: 0px 40px;
+    overflow: hidden;
 
+}
+
+.profile-playlist-img>img {
+    width: 100%;
 }
 
 .profile-playlist-name {

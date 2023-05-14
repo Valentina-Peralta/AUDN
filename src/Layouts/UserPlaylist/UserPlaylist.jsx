@@ -5,8 +5,32 @@ import NavBar from "../../Components/NavBar/NavBar";
 
 function UserPlaylist() {
     const playlist_id = useParams('id')
+    const [playlist_name, setPlaylist_name] = useState('')
     const [songs, setSongs] = useState([])
     const songsImg = [];
+    const user_id = localStorage.getItem('user_id')
+
+    const listen = (id) => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "user_id": user_id,
+            "song_id": id
+        });
+
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/api/reproductions", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
 
     songs.forEach((song) => {
         if (!songsImg.includes(song.image)) {
@@ -24,21 +48,27 @@ function UserPlaylist() {
                 .then(response => response.json())
                 .then(result => {
                     setSongs(result)
+                    setPlaylist_name(result[0].playlist_name)
                     console.log(result)
                 })
                 .catch(error => console.log('error', error));
         }, [])
     return (
         <div className="userPlContainer">
-            {/*  <h5 className="generated">Playlist generada de música contextual</h5>
-           */}  <div className="plTitle">
+            <div className="plTitle">
                 <NavLink to="/home">
                     <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 8L17 8M8 1L1 8L8 15" stroke="#26262E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </NavLink>
 
-                <h1 className="pl">Playlist generada de música contextual </h1>
+                <h1 className="pl">{playlist_name} </h1>
+                <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2Z" fill="#26262E" />
+                    <path d="M4 10C4 11.1046 3.10457 12 2 12C0.895431 12 0 11.1046 0 10C0 8.89543 0.895431 8 2 8C3.10457 8 4 8.89543 4 10Z" fill="#26262E" />
+                    <path d="M4 18C4 19.1046 3.10457 20 2 20C0.895431 20 0 19.1046 0 18C0 16.8954 0.895431 16 2 16C3.10457 16 4 16.8954 4 18Z" fill="#26262E" />
+                </svg>
+
             </div>
             {songsImg.length < 4 ? (<div className="plImg2 plImg">
                 <div className="artistImg">
@@ -83,12 +113,15 @@ function UserPlaylist() {
 
             </div>
             <div className="playlist">
-                <div className="card-container-results">
+                <div
+                    className="card-container-results">
                     {songs.map(song => (<div className="song-container">
 
 
                         <div className="song-img">
-                            <img src={song.image} alt="" />
+                            <img
+                                onClick={() => listen(song.id)}
+                                src={song.image} alt="" />
                         </div>
                         <div className="text-container">
                             <div className="song-name">{song.name}</div>
