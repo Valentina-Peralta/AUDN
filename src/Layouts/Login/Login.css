@@ -65,13 +65,21 @@ margin-bottom: 50px;
 
 .no-input   {
     border: none;
-    outline: none;
+    outline: #FF8E0A;
 }
+
+.no-input:focus {
+     border: 2px solid #FF8E0A;
+    outline: 2px solid #FF8E0A;
+}
+
 
 .input:focus   {
     border: 2px solid #FF8E0A;
-    outline: 2px solid #FF8E0A;
+   
 }
+
+
 
 .btn-form   {
     background-color: #e4e6e8;
@@ -85,3 +93,10 @@ margin-bottom: 50px;
     gap: 12px;
 }
 
+
+.btn-absolute   {
+    position: absolute;
+    right: 40px;
+    top: 380px;
+
+}
