@@ -113,10 +113,6 @@
   color: #26262E;
 }
 
-body {
-  overflow: hidden;
-}
-
 .cupidImg2 {
   width: 14em;
   height: 14em;
@@ -252,7 +248,6 @@ body {
   animation: proxArtist 0.25s ease-out forwards;
 }
 
-
 @keyframes proxArtist {
   0% {
     background-color: blue;
@@ -328,8 +323,6 @@ body {
   }
 }
 
-
-
 .animacionImg1Like {
   animation: currentArtistLike 0.3s ease-out forwards;
 }
@@ -345,9 +338,8 @@ body {
   10% {
     left: -3%;
     transform: rotate(-2deg);
-    top: 6%
+    top: 6%;
   }
-
 
   20% {
     left: -6%;
@@ -357,15 +349,11 @@ body {
     transform: rotate(-4deg);
   }
 
-
-
   30% {
     left: -9%;
     top: 9%;
     transform: rotate(-8deg);
   }
-
-
 
   40% {
     left: -12%;
@@ -375,16 +363,12 @@ body {
     transform: rotate(-12deg);
   }
 
-
-
   50% {
     left: -15%;
     top: 12%;
     transform: rotate(-16deg);
     opacity: 0.8;
   }
-
-
 
   60% {
     left: -18%;
@@ -394,9 +378,6 @@ body {
     transform: rotate(-20deg);
   }
 
-
-
-
   70% {
     left: -20%;
     top: 15%;
@@ -404,18 +385,13 @@ body {
     opacity: 0.6;
   }
 
-
-
   80% {
     left: -26%;
     top: 16%;
     opacity: 0.4;
 
-
     transform: rotate(-28deg);
   }
-
-
 
   90% {
     left: -32%;
@@ -424,8 +400,6 @@ body {
     opacity: 0.2;
   }
 
-
-
   100% {
     left: -35%;
 
@@ -433,10 +407,7 @@ body {
     opacity: 0;
     transform: rotate(-30deg);
   }
-
 }
-
-
 
 .animacionImg1Dislike {
   animation: currentArtistDislike 0.3s ease-out forwards;
@@ -453,9 +424,8 @@ body {
   10% {
     left: 3%;
     transform: rotate(2deg);
-    top: 6%
+    top: 6%;
   }
-
 
   20% {
     left: 6%;
@@ -465,15 +435,11 @@ body {
     transform: rotate(4deg);
   }
 
-
-
   30% {
     left: 9%;
     top: 9%;
     transform: rotate(8deg);
   }
-
-
 
   40% {
     left: 12%;
@@ -483,16 +449,12 @@ body {
     transform: rotate(12deg);
   }
 
-
-
   50% {
     left: 15%;
     top: 12%;
     transform: rotate(16deg);
     opacity: 0.8;
   }
-
-
 
   60% {
     left: 18%;
@@ -502,9 +464,6 @@ body {
     transform: rotate(20deg);
   }
 
-
-
-
   70% {
     left: 20%;
     top: 15%;
@@ -512,18 +471,13 @@ body {
     opacity: 0.6;
   }
 
-
-
   80% {
     left: 26%;
     top: 16%;
     opacity: 0.4;
 
-
     transform: rotate(28deg);
   }
-
-
 
   90% {
     left: 32%;
@@ -532,8 +486,6 @@ body {
     opacity: 0.2;
   }
 
-
-
   100% {
     left: 35%;
 
@@ -541,5 +493,4 @@ body {
     opacity: 0;
     transform: rotate(30deg);
   }
-
 }

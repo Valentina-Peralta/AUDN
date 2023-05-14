@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 function Contextual() {
 
-
   const navigate = useNavigate()
   const user_id = localStorage.getItem('user_id')
   const [songs, setSongs] = useState([])
@@ -33,6 +32,7 @@ function Contextual() {
   { 'name': 'heavy metal', 'selected': false }
 
   ]
+
 
   const [disabled, setDisabled] = useState(true); // Establecer la prop 'disabled' en 'true' por defecto
   const [contextualSongs, setContextualSongs] = useState([])

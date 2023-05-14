@@ -16,7 +16,6 @@
 
 .plImg:nth-child(2)>img {
   border-radius: 0px 32.9412px 0px 0px;
-
 }
 
 .plImg2>.artistImg {
@@ -72,7 +71,6 @@
   height: 496px;
   left: 0px;
   top: 0px;
-
 }
 
 .song-container {
@@ -83,7 +81,6 @@
 
   width: 320px;
   height: 48px;
-
 }
 
 .song-img {
@@ -111,26 +108,23 @@
 }
 
 .song-name {
-
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
 
-  color: #26262E;
-
+  color: #26262e;
 }
 
 .song-artist {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
 
   letter-spacing: 0.5px;
-
 
   color: #838486;
 }
@@ -152,7 +146,6 @@
   height: 40px;
   left: 24px;
   top: 24px;
-
 }
 
 .playlist-nav-bar>p {
@@ -170,7 +163,6 @@
   line-height: 24px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .playlist-info {
