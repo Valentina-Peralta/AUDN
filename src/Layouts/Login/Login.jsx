@@ -12,6 +12,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (email.length > 5 && password.length > 5) {
@@ -21,14 +22,12 @@ function Login() {
     }
   }, [email, password]);
 
-  console.log(email, password);
   const toggleCloseOpen = (event) => {
     setShowPass(!showPass);
     setImg(showPass ? close : open);
     console.log(showPass);
     event.preventDefault();
   };
-  const navigate = useNavigate();
 
   const login = () => {
     var myHeaders = new Headers();
@@ -55,8 +54,6 @@ function Login() {
         localStorage.setItem("user_email", result.user.email);
         localStorage.setItem("user_user_name", result.user.user_name);
         localStorage.setItem("user_image", result.user.image);
-
-        console.log(result);
         navigate("/home");
       })
       .catch((error) => console.log(error));

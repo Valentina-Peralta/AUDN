@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "../NewPlaylist/NewPlaylist.css"
 
 function NewPlaylist() {
-  const user_id = localStorage.getItem('user_id')
   const navigate = useNavigate()
+  const user_id = localStorage.getItem('user_id')
+
+  const [plName, setPlName] = useState('')
 
 
   const addEmptyPlaylist = () => {
@@ -12,7 +14,7 @@ function NewPlaylist() {
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      "name": "hola",
+      "name": plName,
       "user_id": user_id,
     });
 
@@ -29,7 +31,8 @@ function NewPlaylist() {
         console.log(result)
         const id = result.playlist[0].id
         console.log(id)
-        navigate(`/emptyuserplaylist`)
+        localStorage.setItem('last-playlist-id', id)
+        navigate(`/emptyuserplaylist/${plName}`)
         //que lleve a otro layout '/userEmptyPlaylist'
       })
       .catch(error => console.log('error', error));
@@ -49,11 +52,13 @@ function NewPlaylist() {
         <h1 className='plName'>¿Cómo se llamará tu playlist?</h1>
       </div>
       <label className='newPlInput' htmlFor="nombre_playlist">Nombre de la Playlist:</label>
-      <input className='npi' type="text" />
+      <input className='npi' type="text"
+        onChange={(e) => setPlName(e.target.value)}
+      />
       <button
         onClick={addEmptyPlaylist}
 
-        className='disabled'>
+        className={plName === '' ? 'disabled' : 'enabled pulse'}>
         Crear Playlist</button>
     </div>
   )

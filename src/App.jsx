@@ -25,6 +25,7 @@ import UserPlaylist from "./Layouts/UserPlaylist/UserPlaylist";
 import EmptyUserPlaylist from "./Layouts/UserPlaylist/EmptyUserPlaylist";
 import NewPlaylist from "./Layouts/NewPlaylist/NewPlaylist";
 import Searcher2 from "./Layouts/Searcher/Searcher2";
+import AddSongs from "./Layouts/UserPlaylist/AddSongs";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -44,7 +45,8 @@ const router = createBrowserRouter(
       <Route path="/register2" element={<Register2 />} />
       <Route path="/contract" element={<Contract />} />
       <Route path="/userplaylist/:id" element={<UserPlaylist />} />
-      <Route path="/emptyuserplaylist" element={<EmptyUserPlaylist />} />
+      <Route path="/emptyuserplaylist/:name" element={<EmptyUserPlaylist />} />
+      <Route path="/addSongs/:name" element={<AddSongs />} />
 
       <Route path="/newPlaylist" element={<NewPlaylist />} />
 

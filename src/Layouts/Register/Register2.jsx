@@ -1,136 +1,130 @@
-import React from 'react'
+import { React, useState, useEffect } from "react";
 import "./Register2.css";
-import { useState } from 'react'
+import flecha from "../../Img/position=left-1.svg";
 import open from "../../Img/state=open.svg";
 import close from "../../Img/state=closed.svg";
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Register2() {
   const [showPass, setShowPass] = useState(false);
   const [img, setImg] = useState(close);
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
   const [active, setActive] = useState("form");
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  useEffect(() => {
+    if (email.length > 5 && password.length > 5) {
+      setActive("standard");
+    } else {
+      setActive("form");
+    }
+  }, [email, password]);
 
-  const signUp = (e) => {
-    e.preventDefault()
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      "email": localStorage.getItem('email'),
-      "user_name": email,
-      "password": password
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    fetch("http://localhost:3001/api/users/register", requestOptions)
-      .then(response => response.text())
-      .then(result => {
-        navigate('/login')
-        console.log(result)
-      })
-      .catch(error => console.log('error', error));
-
-
-
-  }
-
-
-
-
-
-
-  /*   const inputContainer = (event) => {
-      setInput1(event.target.value);
-      setInput2(document.getElementById("password").value);
-      if (input1.length > 4 && input2.length > 4) {
-        setActive("standard");
-      } else {
-        setActive("form");
-      }
-    }; */
-
+  console.log(email, password);
   const toggleCloseOpen = (event) => {
     setShowPass(!showPass);
     setImg(showPass ? close : open);
     console.log(showPass);
     event.preventDefault();
   };
+  const navigate = useNavigate();
+
+  const login = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      email: email,
+      password: password,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:3001/api/users/login", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("user_id", result.user.id);
+        localStorage.setItem("user_name", result.user.name);
+        localStorage.setItem("user_email", result.user.email);
+        localStorage.setItem("user_user_name", result.user.user_name);
+        localStorage.setItem("user_image", result.user.image);
+
+        console.log(result);
+        navigate("/home");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <div className="register2-container">
+    <div className="rContainer">
       <div className="top-gradient"></div>
-
       <div className="margin-container">
+        <header className="header">
+          <NavLink to="/">
+            <button className="btn-borderless">
+              <img src={flecha} alt="flecha atras" />
+            </button>
+          </NavLink>
+          <h1 className="create">Crear Cuenta</h1>
+        </header>
+        <form action="submit" className="form">
+          <label htmlFor="username" className="login-text">
+            Nombre de Usuario:
+          </label>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            name="email"
+            id="username"
+            className="input"
+          />
 
-        <div className='top-nav-bar'>
-          <button className="left-icon-placeholder" onClick={() => window.history.back()}><img src="src\Img\position=left-1.svg" alt="backArrow" /></button>
-          <h1 className='title-placeholder'>Crear Cuenta</h1>
-        </div>
+          <label htmlFor="password" className="login-text">
+            Contraseña:
+          </label>
 
-        <form className="form">
-
-          <h1 className='ingresa-un-nombre'>Ingresa un nombre de usuario y contraseña.</h1>
-
-          <div className='input-2'>
-            <label htmlFor="username" className="login-text">
-              Nombre de Usuario:
-            </label>
+          <div className="div-input">
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)} type="text"
-              name="username"
-              id="username"
-              className="input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type={showPass ? "text" : "password"}
+              name="password"
+              id="password"
+              className="no-input"
             />
+
+            <button className="btn-borderless" onClick={toggleCloseOpen}>
+              <img src={img} alt="" />
+            </button>
           </div>
-
-          <div className='input-3'>
-            <label htmlFor="password" className="login-text">
-              Contraseña:
-            </label>
-            <p className='hint-placeholder'>Deberás poder confirmalo luego.</p>
-
-            <div className="div-input">
-              <input
-                value={password} onChange={(e) => setPassword(e.target.value)} type={showPass ? "text" : "password"}
-                name="password"
-                id="password"
-                className="no-input"
-              />
-              <button className="btn-borderless" onClick={toggleCloseOpen}>
-                <img src={img} alt="" />
-              </button>
-            </div>
-
+          <div className="contract">
+          <input className="checkbox" type="checkbox"  />
+          <NavLink to={"/contract"}>
+          <p className="terms"> He leído y acepto los términos y condiciones.</p>
+          </NavLink>
           </div>
-
-          <div className="checkbox">
-            estoy haciendo el checkbox
-          </div>
-
           <button
-            type='button'
-            onClick={signUp}
-            className={` btn-${active} white-text`}>
-            Continuar
+            type="button"
+            onClick={login}
+            className={` btn-${active} white-text`}
+          >
+            Iniciar Sesión
           </button>
-
         </form>
+        <button className="create btn-borderless">
+          ¿Olvidaste tu contraseña?
+        </button>
       </div>
     </div>
   );
 }
 
-export default Register2
+export default Register2;

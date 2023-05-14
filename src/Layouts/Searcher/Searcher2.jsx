@@ -66,7 +66,7 @@ function Searcher2() {
 
                 <div className="trend-grid">
 
-                    {songs.map(song => {
+                    {songs.length > 0 ? songs.map(song => {
                         return (<div
 
                             className="search-song-container">
@@ -79,7 +79,7 @@ function Searcher2() {
                             </div>
                         </div>
                         )
-                    })}
+                    }) : null}
 
 
 
