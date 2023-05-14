@@ -91,19 +91,20 @@ function Login() {
             Contraseña:
           </label>
 
-          <div className="div-input">
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type={showPass ? "text" : "password"}
-              name="password"
-              id="password"
-              className="no-input"
-            />
-            <button className="btn-borderless" onClick={toggleCloseOpen}>
-              <img src={img} alt="" />
-            </button>
-          </div>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type={showPass ? "text" : "password"}
+            name="password"
+            id="password"
+            className="input"
+          />
+          <button
+            className="btn-borderless btn-absolute"
+            onClick={toggleCloseOpen}
+          >
+            <img src={img} alt="" />
+          </button>
 
           <button
             type="button"
