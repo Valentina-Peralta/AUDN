@@ -297,7 +297,7 @@
   left: 24px;
   top: 250px;
   overflow-y: scroll;
-
+  padding-top: 1rem;
 }
 
 .result-song {
@@ -311,8 +311,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
   width: 80%;
+  padding: 0px;
   padding: 5px 10px;
 }
 
@@ -327,7 +327,7 @@
 .result-song-text>.title {
   color: #26262E;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   width: 90%;
 }
 
@@ -337,7 +337,6 @@
   width: 25px;
   height: 25px;
   padding: 3px;
-  margin-right: 1rem;
 }
 
 .result-song>img {
@@ -353,8 +352,7 @@
 .image-copia {
   height: 22px;
   width: 21px;
-  position:absolute;
+  position: absolute;
   top: 436px;
   left: 54px;
 }
-

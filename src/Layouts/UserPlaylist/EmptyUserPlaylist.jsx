@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../../Components/NavBar/NavBar'
 import { useNavigate, useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
 function EmptyUserPlaylist() {
 
@@ -12,14 +13,20 @@ function EmptyUserPlaylist() {
     const addSongs = () => {
         navigate(`/addSongs/${plName.name}`)
     }
+
+
+    const [date] = useState(new Date());
+
     return (
         <div className='add-songs'>
 
             <div className="top-gradient"></div>
             <div className="playlist-nav-bar">
-                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 8L17 8M8 1L1 8L8 15" stroke="#26262E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <NavLink to='/newPlaylist'>
+                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 8L17 8M8 1L1 8L8 15" stroke="#26262E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </NavLink>
                 <p>{plName.name}</p>
                 <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2Z" fill="#26262E" />
@@ -36,7 +43,8 @@ function EmptyUserPlaylist() {
                 <img src={user_img} alt="" />
                 <div>
                     <p className='user_name'>{user_name}</p>
-                    {/*  <p className='date'>fecha hora</p> */}
+                    <p className='date'>{date.toLocaleDateString()}-{date.toLocaleTimeString()}</p>
+
                 </div>
             </div>
 

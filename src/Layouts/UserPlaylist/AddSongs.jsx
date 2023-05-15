@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 function AddSongs() {
+    const [filter, setFilter] = useState('')
     const navigate = useNavigate()
-    const [allSongs, setAllSongs] = useState([])
+    const [songs, setSongs] = useState([])
     const plName = useParams().name
     const playlist_id = localStorage.getItem('last-playlist-id')
     const sorter = [
@@ -34,6 +35,7 @@ function AddSongs() {
     const [songs_id, setSongs_id] = useState([])
     console.log(playlist_id)
     const [playlistReady, setPlaylistReady] = useState(false)
+
     useEffect(
         () => {
             const requestOptions = {
@@ -51,6 +53,39 @@ function AddSongs() {
         }
         , [])
 
+    const searchSongs = () => {
+
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "searchTerm": filter
+        });
+
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/api/songs/search", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+
+                setSongs(result);
+
+            })
+            .catch(error => console.log('error', error));
+
+    }
+
+    const handleInput = (e) => {
+        setFilter(e.target.value)
+        console.log(songs)
+    }
+    useEffect(() => searchSongs()
+        , [filter])
 
     const addSongs = () => {
         var myHeaders = new Headers();
@@ -109,6 +144,9 @@ function AddSongs() {
                     <path d="M4 18C4 19.1046 3.10457 20 2 20C0.895431 20 0 19.1046 0 18C0 16.8954 0.895431 16 2 16C3.10457 16 4 16.8954 4 18Z" fill="#26262E" />
                 </svg>
                 <input
+                    value={filter}
+                    onChange={(e) =>
+                        handleInput(e)}
                     className='search-songs'
                     type="text" name=""
                     placeholder='Buscar' />
@@ -120,13 +158,13 @@ function AddSongs() {
                 </svg>
             </div>
             <div className="sorter-container">
-                {sorter.map(label => (<div className={label.selected ? 'sort-label selected' : 'sort-label'}>
+                {filter === '' ? sorter.map(label => (<div className={label.selected ? 'sort-label selected' : 'sort-label'}>
                     {label.name}
-                </div>))}
+                </div>)) : null}
             </div>
             <div className="result-container">
 
-                {top20Global.map(song => (<div className="result-song">
+                {filter === '' ? top20Global.map(song => (<div className="result-song">
                     <img src={song.album_image} alt="" />
                     <div className="result-song-text">
                         <p className='title'>{song.name}</p>
@@ -139,7 +177,19 @@ function AddSongs() {
                         <path d="M7 12.3137V1M12.6569 6.65685H1.34315" stroke="#26262E" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>))
-                }
+                    : songs.map(song => (<div className="result-song">
+                        <img src={song.album_image} alt="" />
+                        <div className="result-song-text">
+                            <p className='title'>{song.song_name}</p>
+                            <p className='result-artist'>{song.artist_name}</p>
+                        </div>
+                        <svg
+                            onClick={() => addSongId(song.id)}
+                            className='add-song'
+                            width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 12.3137V1M12.6569 6.65685H1.34315" stroke="#26262E" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>))}
             </div>
             <div className="ver-playlist">
                 {playlistReady ? <button
