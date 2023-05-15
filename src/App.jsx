@@ -26,6 +26,7 @@ import EmptyUserPlaylist from "./Layouts/UserPlaylist/EmptyUserPlaylist";
 import NewPlaylist from "./Layouts/NewPlaylist/NewPlaylist";
 import Searcher2 from "./Layouts/Searcher/Searcher2";
 import AddSongs from "./Layouts/UserPlaylist/AddSongs";
+import Friends from "./Layouts/Friends/Friends";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
       <Route path="/cupido" element={<Cupid />} />
       <Route path="/contextual" element={<Contextual />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/friends" element={<Friends />} />
       <Route path="/config" element={<Config />} />
       <Route path="/searcher" element={<Searcher />} />
       <Route path="/searcher2" element={<Searcher2 />} />
