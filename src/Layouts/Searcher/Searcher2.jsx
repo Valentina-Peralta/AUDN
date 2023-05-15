@@ -11,6 +11,7 @@ function Searcher2() {
 
     const searchSongs = (e) => {
         setSearchTerm(e.target.value);
+
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
