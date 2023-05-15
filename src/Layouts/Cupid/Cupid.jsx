@@ -224,7 +224,7 @@ function Cupid() {
         </div>
         {button === 'Crear playlist' ? <button
           onClick={addPlaylist}
-          className={likedArtists.length > 4 ? 'enabled' : "disabled"}>Crear playlist</button>
+          className={likedArtists.length > 1 ? 'enabled' : "disabled"}>Crear playlist</button>
           :
           null}
         {button === 'loading' ? <div className="loader"></div> : null}

@@ -5,8 +5,9 @@ import { NavLink } from 'react-router-dom'
 function Searcher() {
 
     const user_id = localStorage.getItem('user_id')
-    const [songs, setSongs] = useState([])
-    const [top20, setTop20] = useState([])
+    const [songs, setSongs] = useState([])//filtered songs
+    const [top20, setTop20] = useState([])//user top20 songs
+    const [filter, setFilter] = useState('')//input value
     console.log(songs)
     useEffect(
         () => {
@@ -18,7 +19,6 @@ function Searcher() {
             fetch(`http://localhost:3001/api/reproductions/top20/${user_id}`, requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result)
                     setTop20(result)
                 })
                 .catch(error => console.log('error', error));
@@ -52,13 +52,34 @@ function Searcher() {
 
     }
 
-    const [filter, setFilter] = useState('')
     const handleInput = (e) => {
         setFilter(e.target.value)
-        console.log(filter)
     }
     useEffect(() => searchSongs()
         , [filter])
+
+    const listen = (id) => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "user_id": user_id,
+            "song_id": id
+        });
+
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/api/reproductions", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
+
     return (
         <div>
             <div className="top-gradient"></div>
@@ -95,6 +116,8 @@ function Searcher() {
                 <div className="trend-grid">
                     {filter !== '' && songs.length > 0 ? songs.map(song => {
                         return (<div
+                            onClick={() => listen(song.song_id)}
+
                             key={song.id}
                             className="search-song-container">
                             <div className="search-song-image" >
@@ -102,11 +125,13 @@ function Searcher() {
                             </div>
                             <div className="search-song-text">
                                 <p className='search-song-title'>{song.song_name}</p>
-                                <p className='search-song-artist'>{song.album_name}</p>
+                                <p className='search-song-artist'>{song.artist_name}</p>
                             </div>
                         </div>
                         )
                     }) : top20.map(song => (<div
+                        onClick={() => listen(song.id)}
+
                         key={song.id}
                         className="top-song-container">
                         <div className="top-song-image" >
