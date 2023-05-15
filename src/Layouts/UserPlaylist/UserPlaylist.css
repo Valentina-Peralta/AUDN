@@ -349,3 +349,12 @@
   display: flex;
   justify-content: center;
 }
+
+.image-copia {
+  height: 22px;
+  width: 21px;
+  position:absolute;
+  top: 436px;
+  left: 54px;
+}
+
