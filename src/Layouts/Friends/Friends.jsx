@@ -18,7 +18,8 @@ function Friends() {
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            "searchTerm": filter
+            "searchTerm": filter,
+            "excludedUserId": user_id
         });
 
         var requestOptions = {
@@ -32,7 +33,8 @@ function Friends() {
             .then(response => response.json())
             .then(result => {
                 console.log(result)
-                setUsers(result)
+                const filteredUsers = result.filter(user => !friends.some(friend => friend.id === user.id));
+                setUsers(filteredUsers);
             })
             .catch(error => console.log('error', error));
         const updatedUsers = [...users].filter(item => !friends.includes(item));
@@ -85,11 +87,13 @@ function Friends() {
 
         fetch("http://localhost:3001/api/users/addFriend", requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                //setear users quitando el elemento al que le hago clic
+                const updatedUsers = users.filter(user => user.id !== user2_id);
+                setUsers(updatedUsers);
+            })
             .catch(error => console.log('error', error));
-        //setear users quitando el elemento al que le hago clic
-        const updatedUsers = users.filter(user => user.id !== user2_id);
-        setUsers(updatedUsers);
 
     }
     return (
