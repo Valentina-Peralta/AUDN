@@ -4,6 +4,8 @@ import "./Home.css";
 import Headphone from "../../Img/headphones.png";
 import Cherub from "../../Img/Cherub.png";
 import { NavLink, Outlet } from "react-router-dom";
+import Map from "../../Img/map.png";
+import Question from "../../Img/question.png";
 
 function Home() {
   return (
@@ -70,7 +72,10 @@ function Home() {
         </NavLink>
         <NavLink to="/contextual">
           <div className="card">
-            <div className="card-2-image"></div>
+            <div className="card-2-image">
+              <img className="map" src={Map} alt="" />
+              <img className="question" src={Question} alt="" />
+            </div>
             <div className="card-text">
               <p className="card-title">Música contextual</p>
               <p className="card-caption">
