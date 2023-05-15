@@ -140,7 +140,8 @@ function Cupid() {
           <button className="cross" onClick={() => Dislike(artists[0].id)}></button>
         </div>
         <button className="disabled">Crear Playlist</button>
-      </div>) : null
+      </div>
+      ) : null
 
   );
 }
