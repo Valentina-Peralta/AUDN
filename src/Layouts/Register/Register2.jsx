@@ -127,12 +127,9 @@ function Register2() {
             onClick={login}
             className={` btn-${active} white-text`}
           >
-            Iniciar Sesión
+            Continuar
           </button>
         </form>
-        <button className="create btn-borderless">
-          ¿Olvidaste tu contraseña?
-        </button>
       </div>
     </div>
   );
