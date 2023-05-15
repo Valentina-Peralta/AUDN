@@ -35,12 +35,14 @@ function Register2() {
   };
   const navigate = useNavigate();
 
-  const login = () => {
+  const signUp = (e) => {
+    e.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      email: email,
+      email: localStorage.getItem("email"),
+      user_name: email,
       password: password,
     });
 
@@ -51,22 +53,14 @@ function Register2() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3001/api/users/login", requestOptions)
-      .then((response) => response.json())
+    fetch("http://localhost:3001/api/users/register", requestOptions)
+      .then((response) => response.text())
       .then((result) => {
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("user_id", result.user.id);
-        localStorage.setItem("user_name", result.user.name);
-        localStorage.setItem("user_email", result.user.email);
-        localStorage.setItem("user_user_name", result.user.user_name);
-        localStorage.setItem("user_image", result.user.image);
-
+        navigate("/login");
         console.log(result);
-        navigate("/home");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("error", error));
   };
-
   return (
     <div className="rContainer">
       <div className="top-gradient"></div>
@@ -124,7 +118,7 @@ function Register2() {
           </div>
           <button
             type="button"
-            onClick={login}
+            onClick={signUp}
             className={` btn-${active} white-text`}
           >
             Continuar
