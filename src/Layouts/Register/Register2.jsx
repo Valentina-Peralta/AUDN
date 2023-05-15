@@ -12,14 +12,19 @@ function Register2() {
   const [email, setEmail] = useState("");
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
+  const [ischeck, setIscheck] = useState(false);
 
+  function check() {
+    setIscheck(!ischeck);
+  }
+  console.log(ischeck);
   useEffect(() => {
-    if (email.length > 5 && password.length > 5) {
+    if (email.length > 5 && password.length > 5 && ischeck === true) {
       setActive("standard");
     } else {
       setActive("form");
     }
-  }, [email, password]);
+  }, [email, password, check]);
 
   console.log(email, password);
   const toggleCloseOpen = (event) => {
@@ -88,24 +93,30 @@ function Register2() {
             Contraseña:
           </label>
 
-          <div className="div-input">
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type={showPass ? "text" : "password"}
-              name="password"
-              id="password"
-              className="no-input"
-            />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type={showPass ? "text" : "password"}
+            name="password"
+            id="password"
+            className="input"
+          />
 
-            <button className="btn-borderless" onClick={toggleCloseOpen}>
-              <img src={img} alt="" />
-            </button>
-          </div>
+          <button
+            className="btn-borderless btn-absolute"
+            onClick={toggleCloseOpen}
+          >
+            <img src={img} alt="" />
+          </button>
+
           <div className="contract">
-            <input className="checkbox" type="checkbox" />
+            <input className="checkbox" type="checkbox" onClick={check} />
             <NavLink to={"/contract"}>
-              <p className="terms"> He leído y acepto los términos y condiciones.</p>
+              <p className="terms">
+                He leído y acepto los{" "}
+                <span className="termsspan">términos</span> y{" "}
+                <span className="termsspan">condiciones.</span>
+              </p>
             </NavLink>
           </div>
           <button

@@ -91,9 +91,16 @@
   margin-bottom: 7em;
 }
 .terms {
-  font-size: 0.8em;
-  color: #ff8e0a;
+  font-size: 0.82em;
+  color: #26262E;
 }
+
+.termsspan {
+  color: #FF8E0A;
+  font-size: 0.9rem;
+  
+}
+
 .checkbox {
   width: 2em;
   height: 2em;
