@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 function Register() {
   const [email, setEmail] = useState('');
   const [emailValido, setEmailValido] = useState(false);
-
+  const [newUser, setNewUser] = useState(true)
   const handleChangeEmail = (event) => {
     setEmail(event.target.value);
     // Validar si el email ingresado es válido
@@ -43,7 +43,7 @@ function Register() {
         //si el result={"message":...}--->continuar a register2
         //si el result={"error":...}---->dar un mensaje avisando al usuario
         if (result.error === "El usuario ya se encuentra registrado") {
-          alert("El usuario ya se encuentra registrado")
+          setNewUser(false)
         } else {
           localStorage.setItem('email', email)
           navigate('/register2')
@@ -70,11 +70,19 @@ function Register() {
         <label>
           <input className='input-mail' type="email" value={email} onChange={handleChangeEmail} />
         </label>
-        <p className='hint-placeholder'>Deberás poder confirmalo luego.</p>
+        {!newUser ? <p className='error-alert'>Ya estás registrado
+          <NavLink to='/login'>
+            <span className='login'>  Ingresar</span>
+          </NavLink>
+        </p> :
+          <div>
+            <p className='hint-placeholder'>Deberás poder confirmalo luego.</p>
+            <button
+              onClick={checkEmail}
+              className='continuar-button btn-standard disabled1' type="submit" style={{ backgroundColor: emailValido ? '#FF8E0A' : '' }}>Continuar</button>
+          </div>}
+
       </form>
-      <button
-        onClick={checkEmail}
-        className='continuar-button btn-standard disabled1' type="submit" style={{ backgroundColor: emailValido ? '#FF8E0A' : '' }}>Continuar</button>
     </div>
   );
 }

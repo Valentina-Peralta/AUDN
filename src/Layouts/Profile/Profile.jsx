@@ -10,6 +10,8 @@ function Profile() {
   const id = localStorage.getItem("user_id");
   const [playlists, setPlaylists] = useState([]);
   console.log(playlists)
+
+
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -20,7 +22,7 @@ function Profile() {
       .then((response) => response.json())
       .then((result) => {
         if (!result.error) {
-          const filteredPlaylists = result.filter((playlist) => playlist.name !== "Música contextual");
+          const filteredPlaylists = result.filter((playlist) => playlist.name !== "Música contextual" && playlist.name !== "Cupido Musical");
 
           setPlaylists(filteredPlaylists);
         }
@@ -82,7 +84,9 @@ function Profile() {
           return (
             <div className="profile-playlist"
               key={playlist.id}>
-              <NavLink to={`/userPlaylist/${playlist.id}`}> <div className="profile-playlist-img"></div>
+              <NavLink to={`/userPlaylist/${playlist.id}`}> <div className="profile-playlist-img">
+                <img src={playlists[0].album_images[0]} alt="" />
+              </div>
                 <p className="profile-playlist-name">{playlist.name}</p>
                 <p className="profile-playlist-owner">{user_name}</p>
               </NavLink>

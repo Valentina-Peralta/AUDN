@@ -6,12 +6,10 @@
   right: 0;
   top: 0;
   /* Degradado a Blanco/Con color */
-  background: linear-gradient(
-    180deg,
-    rgba(253, 254, 255, 0) 25%,
-    rgba(255, 142, 10, 0.534586) 75%,
-    rgba(255, 142, 10, 0.9) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(253, 254, 255, 0) 25%,
+      rgba(255, 142, 10, 0.534586) 75%,
+      rgba(255, 142, 10, 0.9) 100%);
   opacity: 0.25;
   transform: rotate(-180deg);
 }
@@ -156,9 +154,8 @@
   padding: 12px 16px;
   gap: 12px;
   position: absolute;
-  width: 320px;
+  width: 340px;
   height: 48px;
-  left: 22px;
   top: 496px;
   color: #fdfeff;
 }
@@ -190,4 +187,18 @@
   width: 21em;
   margin-top: 5em;
   background-color: #e4e6e8;
+}
+
+.error-alert {
+  color: #838486;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.login {
+  color: #ff8e0a;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+
 }
