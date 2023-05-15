@@ -36,34 +36,31 @@ function Register2() {
   const navigate = useNavigate();
 
   const signUp = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      "email": localStorage.getItem('email'),
-      "user_name": email,
-      "password": password
+      email: localStorage.getItem("email"),
+      user_name: email,
+      password: password,
     });
 
     var requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: raw,
-      redirect: 'follow'
+      redirect: "follow",
     };
 
     fetch("http://localhost:3001/api/users/register", requestOptions)
-      .then(response => response.text())
-      .then(result => {
-        navigate('/login')
-        console.log(result)
+      .then((response) => response.text())
+      .then((result) => {
+        navigate("/login");
+        console.log(result);
       })
-      .catch(error => console.log('error', error));
-
-
-
-  }
+      .catch((error) => console.log("error", error));
+  };
   return (
     <div className="rContainer">
       <div className="top-gradient"></div>
@@ -124,11 +121,9 @@ function Register2() {
             onClick={signUp}
             className={` btn-${active} white-text`}
           >
-            Registrate          </button>
+            Continuar
+          </button>
         </form>
-        <button className="create btn-borderless">
-          ¿Olvidaste tu contraseña?
-        </button>
       </div>
     </div>
   );
