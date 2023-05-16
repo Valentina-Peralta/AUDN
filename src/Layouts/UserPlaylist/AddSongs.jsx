@@ -33,9 +33,8 @@ function AddSongs() {
     ]
     const [top20Global, setTop20Global] = useState([])
     const [songs_id, setSongs_id] = useState([])
-    console.log(playlist_id)
     const [playlistReady, setPlaylistReady] = useState(false)
-
+    console.log(songs)
     useEffect(
         () => {
             const requestOptions = {
@@ -122,6 +121,13 @@ function AddSongs() {
         }
         setTop20Global(updatedTop20Global);
 
+        const updatedSongs = [...songs];
+        const allsongIndex = updatedSongs.findIndex(song => song.song_id === id);
+        if (allsongIndex >= 0) {
+            updatedSongs.splice(allsongIndex, 1);
+        }
+        setSongs(updatedSongs);
+
     }
 
 
@@ -184,7 +190,7 @@ function AddSongs() {
                             <p className='result-artist'>{song.artist_name}</p>
                         </div>
                         <svg
-                            onClick={() => addSongId(song.id)}
+                            onClick={() => addSongId(song.song_id)}
                             className='add-song'
                             width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 12.3137V1M12.6569 6.65685H1.34315" stroke="#26262E" stroke-width="2" stroke-linecap="round" />

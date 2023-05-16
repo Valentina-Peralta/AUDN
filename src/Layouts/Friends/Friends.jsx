@@ -99,7 +99,9 @@ function Friends() {
     return (
         <div className='friends'>
             <div className="top-gradient" />
-            <div className="header">Amigos
+            <div
+                onClick={() => setFilter('')}
+                className="header">Amigos
             </div>
             <input
                 value={filter}
