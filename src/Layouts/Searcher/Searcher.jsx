@@ -82,7 +82,7 @@ function Searcher() {
 
     return (
         <div>
-            <div className="top-gradient"></div>
+            <div className="top-gradient" style={{ width: '390px' }}></div>
             <p className='searcher-title'>Buscador</p>
             {/*   <NavLink to='/searcher2'>
                 <input type="text" className='search-bar' placeholder='¿Qué deseas escuchar?' />

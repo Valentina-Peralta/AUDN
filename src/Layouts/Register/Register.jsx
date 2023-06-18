@@ -59,7 +59,7 @@ function Register() {
 
   return (
     <div>
-      <div className='top-gradient'></div>
+      <div className='top-gradient' style={{ width: '390px' }}></div>
       <div className='top-nav-bar'>
         <button className="left-icon-placeholder" onClick={() => window.history.back()}><img src="src\Img\position=left-1.svg" alt="backArrow" /></button>
         <h1 className='title-placeholder'>Crear Cuenta</h1>

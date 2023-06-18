@@ -97,8 +97,8 @@ function Friends() {
 
     }
     return (
-        <div className='friends'>
-            <div className="top-gradient" />
+        <div className='friends' style={{ width: '390px' }}>
+            <div className="top-gradient" style={{ width: '390px' }}></div>
             <div
                 onClick={() => setFilter('')}
                 className="header">Amigos

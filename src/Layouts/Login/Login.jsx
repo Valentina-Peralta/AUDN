@@ -61,7 +61,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <div className="top-gradient"></div>
+      <div className="top-gradient" style={{ width: '390px' }}></div>
       <div className="margin-container">
         <header className="header">
           <NavLink to="/">

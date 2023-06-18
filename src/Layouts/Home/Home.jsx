@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import "./Home.css";
 import Headphone from "../../Img/headphones.png";
-import Cherub from "../../Img/Cherub.png";
+import Cherub from "../../Img/cherub.png";
 import { NavLink, Outlet } from "react-router-dom";
 import Map from "../../Img/map.png";
 import Question from "../../Img/question.png";
@@ -10,7 +10,7 @@ import Question from "../../Img/question.png";
 function Home() {
   return (
     <div>
-      <div className="top-gradient"></div>
+      <div className="top-gradient" style={{ width: '390px' }}></div>
       <div className="header-container">
         <div className="header-title">Música ya</div>
         <div className="icons-container">

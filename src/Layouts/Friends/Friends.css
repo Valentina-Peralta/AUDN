@@ -9,6 +9,7 @@
 .profile-info {
     display: flex;
     align-items: center;
+    width: 390px;
 }
 
 .profile-info>.profile-text {
@@ -73,8 +74,10 @@
 
 .friends-container {
     position: absolute;
-    width: 100%;
+    width: 390px;
     height: 550px;
+    overflow-x: hidden;
+
     overflow-y: scroll;
     padding: 24px;
     display: flex;
