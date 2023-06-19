@@ -179,7 +179,7 @@ function Cupid() {
 
   return (
     artists.length > 0 ?
-      (<div className="cupidContainer">
+      (<div className="cupidContainer" >
         <div className="cupidTitle">
           <NavLink to="/home">
             <img src="src\Img\position=left-1.svg" alt="backArrow" />

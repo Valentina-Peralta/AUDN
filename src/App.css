@@ -30,7 +30,9 @@ html,
 body,
 #root {
   width: 390px;
+  height: 844px;
 }
+
 
 .top-gradient {
   width: 100%;

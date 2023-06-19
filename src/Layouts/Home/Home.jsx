@@ -9,8 +9,8 @@ import Question from "../../Img/question.png";
 
 function Home() {
   return (
-    <div>
-      <div className="top-gradient" style={{ width: '390px' }}></div>
+    <div >
+      <div className="top-gradient" ></div>
       <div className="header-container">
         <div className="header-title">Música ya</div>
         <div className="icons-container">
